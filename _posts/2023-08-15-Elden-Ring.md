@@ -2,9 +2,9 @@
 title: On The Nature of Tarnished Souls
 author: Maven
 date: 2023-09-15 20:55:00 +0800
-categories: [Elden Ring, Soulsborne, Tarnished]
-tags: [getting started]
-pin: true
+categories: [Art]
+tags: [art, elden ring, soulsborne, fromsoftware, arcane ink]
+pin: false
 img_path: '/assets/img'
 pin: true
 math: true

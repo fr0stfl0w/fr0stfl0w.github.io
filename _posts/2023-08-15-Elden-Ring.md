@@ -2,7 +2,7 @@
 title: On The Nature of Tarnished Souls
 author: Maven
 date: 2023-09-15 20:55:00 +0800
-categories: [Art]
+categories: [art]
 tags: [art, elden ring, soulsborne, fromsoftware, arcane ink]
 pin: false
 img_path: '/assets/img'

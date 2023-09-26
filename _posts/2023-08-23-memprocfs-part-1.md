@@ -1,9 +1,9 @@
 ---
-title: Text and Typography
-author: cotes
-date: 2019-08-08 11:33:00 +0800
-categories: [Blogging, Demo]
-tags: [typography]
+title: MemProcFS (Part 1)
+author: erika
+date: 2023-08-25 11:33:00 +0800
+categories: [tech]
+tags: [forensics, memprocfs]
 pin: false
 math: true
 mermaid: true

@@ -6,7 +6,7 @@ categories: [Art]
 tags: [art, elden ring, soulsborne, fromsoftware, arcane ink]
 pin: false
 img_path: '/assets/img'
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

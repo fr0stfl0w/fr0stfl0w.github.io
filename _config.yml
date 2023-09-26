@@ -20,7 +20,7 @@ timezone: utc
 
 title: Scavengers' Repo # the main title
 
-tagline: A repository for other cluttered minds, documentation for various tutorials and resources whether you're a fellow cyberspace person or bewildered script kidde grasping at straws # it will display as the sub-title
+tagline: A repository for other cluttered minds, documentation for various tutorials and resources # it will display as the sub-title
 
 description: A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too. 
 
@@ -65,7 +65,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 ## [light|dark]
-theme_mode: dark
+# theme_mode: dark
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url

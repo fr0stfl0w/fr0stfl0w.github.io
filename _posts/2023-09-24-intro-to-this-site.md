@@ -22,8 +22,6 @@ image:
 
 Just a brief overview on a big update to this site from the old one, what it's for, and why. 
 
-## Welcome
-
 Use this as a repo for cluttered minds. Not sure if you're a tech worker, artist, barista, or the like but this website is a collection of various resources and annotations for me to use. Hopefully you'll find them useful too. 
 
 ## Origins

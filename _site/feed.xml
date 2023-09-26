@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>http://localhost:40001/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2023-09-23T06:35:22+00:00</updated>
+  <updated>2023-09-26T03:33:03+00:00</updated>
   <author>
     <name>Erika</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>http://localhost:40001/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:40001/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://localhost:4000/"/>
+    href="http://localhost:40001/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
   <rights> © 2023 Erika </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -20,14 +20,64 @@
 
   
   <entry>
+    <title>How To Use This Site</title>
+    <link href="http://localhost:40001/posts/intro-to-this-site/" rel="alternate" type="text/html" title="How To Use This Site" />
+    <published>2023-09-23T06:10:00+00:00</published>
+  
+    <updated>2023-09-23T06:10:00+00:00</updated>
+  
+    <id>http://localhost:40001/posts/intro-to-this-site/</id>
+    <content src="http://localhost:40001/posts/intro-to-this-site/" />
+    <author>
+      <name>erika</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Tutorial" />
+    
+    <category term="starting out" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Just a brief overview on a big update to this site from the old one, what it’s for, and why.
+
+Welcome
+
+Use this as a repo for cluttered minds. Not sure if you’re a tech worker, artist, barista, or the like but this website is a collection of various resources and annotations for me to use. Hopefully you’ll find them useful too.
+
+Origins
+
+
+
+Tech Stack
+
+This site uses the Gitpage + Jekyll stack w...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>On The Nature of Tarnished Souls</title>
-    <link href="http://localhost:4000/posts/Elden-Ring/" rel="alternate" type="text/html" title="On The Nature of Tarnished Souls" />
+    <link href="http://localhost:40001/posts/Elden-Ring/" rel="alternate" type="text/html" title="On The Nature of Tarnished Souls" />
     <published>2023-09-15T12:55:00+00:00</published>
   
     <updated>2023-09-15T12:55:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/Elden-Ring/</id>
-    <content src="http://localhost:4000/posts/Elden-Ring/" />
+    <id>http://localhost:40001/posts/Elden-Ring/</id>
+    <content src="http://localhost:40001/posts/Elden-Ring/" />
     <author>
       <name>Maven</name>
     </author>
@@ -63,11 +113,6 @@ Installation
 
 Creating a New Site
 
-There are two ways to create a new repository for this theme:
-
-
-  Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
-  GitHu...
     </summary>
   
 
@@ -75,23 +120,31 @@ There are two ways to create a new repository for this theme:
 
   
   <entry>
-    <title>Customize the Favicon</title>
-    <link href="http://localhost:4000/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
-    <published>2019-08-10T16:34:00+00:00</published>
+    <title>Bloodborne in Wonderland</title>
+    <link href="http://localhost:40001/posts/Bloodborne/" rel="alternate" type="text/html" title="Bloodborne in Wonderland" />
+    <published>2023-08-10T16:34:00+00:00</published>
   
-    <updated>2019-08-10T16:34:00+00:00</updated>
+    <updated>2023-08-10T16:34:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/customize-the-favicon/</id>
-    <content src="http://localhost:4000/posts/customize-the-favicon/" />
+    <id>http://localhost:40001/posts/Bloodborne/</id>
+    <content src="http://localhost:40001/posts/Bloodborne/" />
     <author>
-      <name>cotes</name>
+      <name>erika</name>
     </author>
 
   
     
-    <category term="Blogging" />
+    <category term="art" />
     
-    <category term="Tutorial" />
+    <category term="art pieces" />
+    
+    <category term="bloodborne" />
+    
+    <category term="soulsborne" />
+    
+    <category term="sketch" />
+    
+    <category term="arcane ink" />
     
   
 
@@ -103,11 +156,14 @@ There are two ways to create a new repository for this theme:
 
 
 
-      The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.
+      
 
-Generate the favicon
+“Good Hunter, lost in the nightmare. What do you think of that beastly legend and those ailing wards of the church?… I know what you did to them… It’s not y our fault. The nightmare held them, and now they are free. But what about you? Have you profited at all?”
 
-Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...
+Why Bloodborne?
+
+Download &amp;amp; Replace
+
     </summary>
   
 
@@ -116,13 +172,13 @@ Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and th
   
   <entry>
     <title>Getting Started</title>
-    <link href="http://localhost:4000/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
+    <link href="http://localhost:40001/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
     <published>2019-08-09T12:55:00+00:00</published>
   
     <updated>2019-08-09T12:55:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/getting-started/</id>
-    <content src="http://localhost:4000/posts/getting-started/" />
+    <id>http://localhost:40001/posts/getting-started/</id>
+    <content src="http://localhost:40001/posts/getting-started/" />
     <author>
       <name>cotes</name>
     </author>
@@ -163,54 +219,14 @@ There are two ways to create a new repository for this theme:
 
   
   <entry>
-    <title>Writing a New Post</title>
-    <link href="http://localhost:4000/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
-    <published>2019-08-08T06:10:00+00:00</published>
-  
-    <updated>2019-08-08T06:10:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/write-a-new-post/</id>
-    <content src="http://localhost:4000/posts/write-a-new-post/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.
-
-Naming and Path
-
-Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts of the root directory. Please note that the EXTENSION must be one of md and markdown. If you want to save time of cre...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
     <title>Text and Typography</title>
-    <link href="http://localhost:4000/posts/text-and-typography/" rel="alternate" type="text/html" title="Text and Typography" />
+    <link href="http://localhost:40001/posts/text-and-typography/" rel="alternate" type="text/html" title="Text and Typography" />
     <published>2019-08-08T03:33:00+00:00</published>
   
     <updated>2019-08-08T03:33:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/text-and-typography/</id>
-    <content src="http://localhost:4000/posts/text-and-typography/" />
+    <id>http://localhost:40001/posts/text-and-typography/</id>
+    <content src="http://localhost:40001/posts/text-and-typography/" />
     <author>
       <name>cotes</name>
     </author>

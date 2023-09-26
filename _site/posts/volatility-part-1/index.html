@@ -70,7 +70,7 @@
 <meta name="twitter:site" content="@technomancer_01" />
 <meta name="twitter:creator" content="@technomancer_01" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-26T12:55:00+00:00","datePublished":"2023-09-26T12:55:00+00:00","description":"Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s","headline":"Volatilty (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Basic intro to Volatility and Host-Based Forensics in General","url":"http://localhost:40001/assets/img/gallery-ink-executioner.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:40001/posts/volatility-part-1/"},"url":"http://localhost:40001/posts/volatility-part-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-26T18:43:40+00:00","datePublished":"2023-09-26T12:55:00+00:00","description":"Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s","headline":"Volatilty (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Basic intro to Volatility and Host-Based Forensics in General","url":"http://localhost:40001/assets/img/gallery-ink-executioner.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:40001/posts/volatility-part-1/"},"url":"http://localhost:40001/posts/volatility-part-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1186,6 +1186,29 @@
 
     <!-- lastmod date -->
     
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1695753820"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Sep 26, 2023
+</time>
+
+      </span>
+    
 
     
       
@@ -1236,7 +1259,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="494 words"
+  title="492 words"
 >
   <em>2 min</em> read</span>
 
@@ -1397,13 +1420,9 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
 
 <p>Unlike the other tutorials, this one goes more into malfind in the <strong>Identifying Injected Code</strong> part</p>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>This displays a list of processes that Volatility suspects may contain injected code based on the header information displayed <span class="k">in </span>hex, the permissions, and some extracted assembly code, just because a process is listed <span class="k">in </span>the output it doesn<span class="s1">'t mean the process is 100% malware.
-
-</span></pre></td></tr></tbody></table></code></div></div>
+<blockquote class="prompt-tip">
+  <p>“…This displays a list of processes that Volatility suspects may contain injected code based on the header information displayed in hex, the permissions, and some extracted assembly code, just because a process is listed in the output it doesn’t mean the process is 100% malware.”</p>
+</blockquote>
 
 
 </div>
@@ -1562,7 +1581,7 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/text-and-typography/">Text and Typography</a>
+          <a href="/posts/volatility-part-1/">Volatilty (Part 1)</a>
         </li>
       
         
@@ -1666,66 +1685,6 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1769,7 +1728,92 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -1835,39 +1879,6 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
     
     
     
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1915,11 +1926,39 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
     
     
       
+        
+        
+
+  
+    
+    
+    
     
   
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1966,12 +2005,12 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
     
     
     
+      
+    
   
     
     
     
-    
-      
     
   
     
@@ -2013,10 +2052,10 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
         <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/forensics/">forensics</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/plague-doctor/">plague doctor</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
       
     </div>
   </section>
@@ -2085,6 +2124,18 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2133,6 +2184,52 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
                   Just a brief overview on a big update to this site from the old one, what it’s for, and why.
 
 Use this as a repo for cluttered minds. Not sure if you’re a tech worker, artist, barista, or the like ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/memprocfs-part-1/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="small"
+  
+  data-ts="1692934380"
+  data-df="ll"
+  
+>
+  Aug 25, 2023
+</time>
+
+              <h4 class="pt-0 my-2">MemProcFS (Part 1)</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
+
+Headings
+
+H1 - heading
+
+H2 - heading
+
+H3 - ...
                 </p>
               </div>
             </div>
@@ -2286,66 +2383,6 @@ Use this as a repo for cluttered minds. Not sure if you’re a tech worker, arti
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2389,7 +2426,92 @@ Use this as a repo for cluttered minds. Not sure if you’re a tech worker, arti
     
     
     
+  
+    
+    
+    
+    
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2455,39 +2577,6 @@ Use this as a repo for cluttered minds. Not sure if you’re a tech worker, arti
     
     
     
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2535,11 +2624,39 @@ Use this as a repo for cluttered minds. Not sure if you’re a tech worker, arti
     
     
       
+        
+        
+
+  
+    
+    
+    
     
   
     
     
     
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2586,12 +2703,12 @@ Use this as a repo for cluttered minds. Not sure if you’re a tech worker, arti
     
     
     
+      
+    
   
     
     
     
-    
-      
     
   
     
@@ -2633,10 +2750,10 @@ Use this as a repo for cluttered minds. Not sure if you’re a tech worker, arti
         <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/forensics/">forensics</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/plague-doctor/">plague doctor</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
       
     </div>
   </section>

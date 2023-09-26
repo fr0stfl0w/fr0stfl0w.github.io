@@ -107,10 +107,12 @@ Probably the most straightforward out of all the tutorials, he just dives right 
 
 Unlike the other tutorials, this one goes more into malfind in the **Identifying Injected Code** part
 
-```shell
-This displays a list of processes that Volatility suspects may contain injected code based on the header information displayed in hex, the permissions, and some extracted assembly code, just because a process is listed in the output it doesn't mean the process is 100% malware.
 
-```
+> "...This displays a list of processes that Volatility suspects may contain injected code based on the header information displayed in hex, the permissions, and some extracted assembly code, just because a process is listed in the output it doesn't mean the process is 100% malware."
+{: .prompt-tip }
+
+
+
 
 
 

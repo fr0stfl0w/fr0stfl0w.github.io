@@ -3,8 +3,8 @@
   {
     "title": "How To Use This Site",
     "url": "/posts/intro-to-this-site/",
-    "categories": "Blogging, Tutorial, starting out",
-    "tags": "writing, intro, documentation",
+    "categories": "tutorial, tech, documentation",
+    "tags": "writing, intro, tech, documentation",
     "date": "2023-09-23 06:10:00 +0000",
     
 
@@ -54,8 +54,8 @@
   {
     "title": "Getting Started",
     "url": "/posts/getting-started/",
-    "categories": "art",
-    "tags": "art, bloodborne, arcane ink, fromsoftware",
+    "categories": "Introduction",
+    "tags": "intro, tech",
     "date": "2019-08-09 12:55:00 +0000",
     
 

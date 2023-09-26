@@ -8,7 +8,7 @@ tags: [art, bloodborne, arcane ink, fromsoftware, sketch, sketchbook, soulsborne
 
 
 img_path: '/assets/img'
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

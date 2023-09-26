@@ -2,8 +2,8 @@
 title: How To Use This Site
 author: erika
 date: 2023-09-23 14:10:00 +0800
-categories: [Blogging, Tutorial, starting out]
-tags: [writing, intro, documentation]
+categories: [tutorial, tech, documentation]
+tags: [writing, intro,tech, documentation]
 render_with_liquid: false
 
 

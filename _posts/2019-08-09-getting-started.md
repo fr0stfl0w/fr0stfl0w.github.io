@@ -2,10 +2,10 @@
 title: Getting Started
 author: cotes
 date: 2019-08-09 20:55:00 +0800
-categories: [art]
-tags: [art, bloodborne, arcane ink, fromsoftware]
+categories: [Introduction]
+tags: [intro, tech]
 pin: true
-img_path: '/posts/20180809'
+img_path: '/assets/img'
 ---
 
 ## Prerequisites

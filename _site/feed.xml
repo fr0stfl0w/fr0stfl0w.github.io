@@ -4,7 +4,7 @@
   <id>http://localhost:40001/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2023-09-26T14:51:33+00:00</updated>
+  <updated>2023-09-26T15:56:53+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:40001/</uri>
@@ -20,11 +20,54 @@
 
   
   <entry>
+    <title>Volatilty (Part 1)</title>
+    <link href="http://localhost:40001/posts/volatility-part-1/" rel="alternate" type="text/html" title="Volatilty (Part 1)" />
+    <published>2023-09-26T12:55:00+00:00</published>
+  
+    <updated>2023-09-26T12:55:00+00:00</updated>
+  
+    <id>http://localhost:40001/posts/volatility-part-1/</id>
+    <content src="http://localhost:40001/posts/volatility-part-1/" />
+    <author>
+      <name>erika</name>
+    </author>
+
+  
+    
+    <category term="tech" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s
+
+Tutorials Used
+https://youtu.be/4lURQHslmMc?si=8-kgV6uInHoXbui8
+0. Installation
+
+Commands Used
+##
+
+Follow the instructions in the Jekyll Docs to co...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>How To Use This Site</title>
     <link href="http://localhost:40001/posts/intro-to-this-site/" rel="alternate" type="text/html" title="How To Use This Site" />
     <published>2023-09-23T06:10:00+00:00</published>
   
-    <updated>2023-09-23T06:10:00+00:00</updated>
+    <updated>2023-09-26T14:52:21+00:00</updated>
   
     <id>http://localhost:40001/posts/intro-to-this-site/</id>
     <content src="http://localhost:40001/posts/intro-to-this-site/" />
@@ -52,8 +95,6 @@
 
       Just a brief overview on a big update to this site from the old one, what it’s for, and why.
 
-Welcome
-
 Use this as a repo for cluttered minds. Not sure if you’re a tech worker, artist, barista, or the like but this website is a collection of various resources and annotations for me to use. Hopefully you’ll find them useful too.
 
 Origins
@@ -62,7 +103,7 @@ Origins
 
 Tech Stack
 
-This site uses the Gitpage + Jekyll stack w...
+This site uses the Gitpage + Jekyll stack with the C...
     </summary>
   
 
@@ -120,7 +161,7 @@ Creating a New Site
     <link href="http://localhost:40001/posts/Bloodborne/" rel="alternate" type="text/html" title="Bloodborne in Wonderland" />
     <published>2023-08-10T16:34:00+00:00</published>
   
-    <updated>2023-09-26T06:01:22+00:00</updated>
+    <updated>2023-09-26T14:52:21+00:00</updated>
   
     <id>http://localhost:40001/posts/Bloodborne/</id>
     <content src="http://localhost:40001/posts/Bloodborne/" />
@@ -150,52 +191,6 @@ Why Bloodborne?
 
 Download &amp;amp; Replace
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Getting Started</title>
-    <link href="http://localhost:40001/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
-    <published>2019-08-09T12:55:00+00:00</published>
-  
-    <updated>2023-09-26T06:01:22+00:00</updated>
-  
-    <id>http://localhost:40001/posts/getting-started/</id>
-    <content src="http://localhost:40001/posts/getting-started/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Introduction" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Prerequisites
-
-Follow the instructions in the Jekyll Docs to complete the installation of the basic environment. Git also needs to be installed.
-
-Installation
-
-Creating a New Site
-
-There are two ways to create a new repository for this theme:
-
-
-  Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
-  GitHub Fork - Convenient for custom devel...
     </summary>
   
 

@@ -18,8 +18,6 @@
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" 
   
-    data-mode="dark"
-  
 >
   <!-- The Head -->
 
@@ -49,12 +47,12 @@
 <meta property="og:url" content="http://localhost:40001/categories/" />
 <meta property="og:site_name" content="Scavengers’ Repo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-09-26T14:51:33+00:00" />
+<meta property="article:published_time" content="2023-09-26T15:56:53+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Categories" />
 <meta name="twitter:site" content="@technomancer_01" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-09-26T14:51:33+00:00","datePublished":"2023-09-26T14:51:33+00:00","description":"A collection of documentation for various tutorials and resources I’ve picked up along the way. Whether you’re a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they’ll help you too.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:40001/categories/"},"url":"http://localhost:40001/categories/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-09-26T15:56:53+00:00","datePublished":"2023-09-26T15:56:53+00:00","description":"A collection of documentation for various tutorials and resources I’ve picked up along the way. Whether you’re a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they’ll help you too.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:40001/categories/"},"url":"http://localhost:40001/categories/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -117,6 +115,151 @@
   <!-- JavaScript -->
 
   
+    <!-- Switch the mode between dark and light. -->
+
+<script type="text/javascript">
+  class ModeToggle {
+    static get MODE_KEY() {
+      return 'mode';
+    }
+    static get MODE_ATTR() {
+      return 'data-mode';
+    }
+    static get DARK_MODE() {
+      return 'dark';
+    }
+    static get LIGHT_MODE() {
+      return 'light';
+    }
+    static get ID() {
+      return 'mode-toggle';
+    }
+
+    constructor() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
+        if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
+          self.clearMode();
+        }
+
+        self.notify();
+      });
+    } /* constructor() */
+
+    get sysDarkPrefers() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
+    }
+
+    get isSysDarkPrefer() {
+      return this.sysDarkPrefers.matches;
+    }
+
+    get isDarkMode() {
+      return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
+    }
+
+    get hasMode() {
+      return this.mode != null;
+    }
+
+    get mode() {
+      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
+      } else {
+        return ModeToggle.LIGHT_MODE;
+      }
+    }
+
+    setDark() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+    }
+
+    setLight() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+    }
+
+    clearMode() {
+      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
+      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
+      window.postMessage(
+        {
+          direction: ModeToggle.ID,
+          message: this.modeStatus
+        },
+        '*'
+      );
+    }
+
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
+  } /* ModeToggle */
+
+  const modeToggle = new ModeToggle();
+</script>
+
+  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -138,7 +281,7 @@
     <h1 class="site-title">
       <a href="/">Scavengers' Repo</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">A repository for other cluttered minds, documentation for various tutorials and resources whether you're a fellow cyberspace person or bewildered script kidde grasping at straws</p>
+    <p class="site-subtitle fst-italic mb-0">A repository for other cluttered minds, documentation for various tutorials and resources</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -197,6 +340,14 @@
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+    
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
     
 
     
@@ -599,60 +750,6 @@
           <i class="far fa-folder fa-fw"></i>
 
           
-          <a href="/categories/introduction/" class="mx-2">Introduction</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-
-            1
-
-            
-              post
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-            <i class="fas fa-fw fa-angle-right"></i>
-          </span>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_3"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder fa-fw"></i>
-
-          
           <a href="/categories/art/" class="mx-2">art</a>
 
           <!-- content count -->
@@ -695,6 +792,87 @@
   
   
 
+  
+    
+
+    
+
+    
+    
+
+    <div class="card categories">
+      <!-- top-category -->
+      <div
+        id="h_3"
+        class="card-header d-flex justify-content-between hide-border-bottom"
+      >
+        <span class="ms-2">
+          <i class="far fa-folder-open fa-fw"></i>
+
+          
+          <a href="/categories/tech/" class="mx-2">tech</a>
+
+          <!-- content count -->
+          
+          <span class="text-muted small font-weight-light">
+            
+              1
+              
+                category
+              ,
+            
+
+            2
+
+            
+              posts
+            
+          </span>
+        </span>
+
+        <!-- arrow -->
+        
+          <a
+            href="#l_3"
+            data-bs-toggle="collapse"
+            aria-expanded="true"
+            aria-label="h_3-trigger"
+            class="category-trigger hide-border-bottom"
+          >
+            <i class="fas fa-fw fa-angle-down"></i>
+          </a>
+        
+      </div>
+      <!-- .card-header -->
+
+      <!-- Sub-categories -->
+      
+        <div id="l_3" class="collapse show" aria-expanded="true">
+          <ul class="list-group">
+            
+              <li class="list-group-item">
+                <i class="far fa-folder fa-fw"></i>
+
+                
+                <a href="/categories/tech/" class="mx-2">tech</a>
+
+                
+                <span class="text-muted small font-weight-light">
+                  2
+
+                  
+                    posts
+                  
+                </span>
+              </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+    <!-- .card -->
+
+    
   
 
   
@@ -767,10 +945,10 @@
 
                 
                 <span class="text-muted small font-weight-light">
-                  1
+                  2
 
                   
-                    post
+                    posts
                   
                 </span>
               </li>
@@ -819,14 +997,14 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/getting-started/">Getting Started</a>
+          <a href="/posts/Bloodborne/">Bloodborne in Wonderland</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Bloodborne/">Bloodborne in Wonderland</a>
+          <a href="/posts/intro-to-this-site/">How To Use This Site</a>
         </li>
       
         
@@ -961,6 +1139,26 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1006,69 +1204,10 @@
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1214,6 +1353,53 @@
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1240,9 +1426,6 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/fromsoftware/">fromsoftware</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/soulsborne/">soulsborne</a>
       
         
@@ -1258,7 +1441,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/sketch/">sketch</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/plague-doctor/">plague doctor</a>
       
     </div>
   </section>
@@ -1429,6 +1615,26 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1474,69 +1680,10 @@
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1682,6 +1829,53 @@
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1708,9 +1902,6 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/fromsoftware/">fromsoftware</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/soulsborne/">soulsborne</a>
       
         
@@ -1726,7 +1917,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/sketch/">sketch</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/plague-doctor/">plague doctor</a>
       
     </div>
   </section>

@@ -2,11 +2,13 @@
 title: Bloodborne in Wonderland 
 author: erika
 date: 2023-08-11 00:34:00 +0800
-categories: [art, art pieces, bloodborne, soulsborne, sketch, arcane ink]
-tags: [favicon]
+
+categories: [art]
+tags: [art, bloodborne, arcane ink, fromsoftware, sketch, sketchbook, soulsborne]
+
 
 img_path: '/assets/img'
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

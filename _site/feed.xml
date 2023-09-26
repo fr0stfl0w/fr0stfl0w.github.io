@@ -4,7 +4,7 @@
   <id>http://localhost:40001/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2023-09-26T03:33:03+00:00</updated>
+  <updated>2023-09-26T14:51:33+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:40001/</uri>
@@ -34,11 +34,11 @@
 
   
     
-    <category term="Blogging" />
+    <category term="tutorial" />
     
-    <category term="Tutorial" />
+    <category term="tech" />
     
-    <category term="starting out" />
+    <category term="documentation" />
     
   
 
@@ -74,7 +74,7 @@ This site uses the Gitpage + Jekyll stack w...
     <link href="http://localhost:40001/posts/Elden-Ring/" rel="alternate" type="text/html" title="On The Nature of Tarnished Souls" />
     <published>2023-09-15T12:55:00+00:00</published>
   
-    <updated>2023-09-15T12:55:00+00:00</updated>
+    <updated>2023-09-26T06:01:22+00:00</updated>
   
     <id>http://localhost:40001/posts/Elden-Ring/</id>
     <content src="http://localhost:40001/posts/Elden-Ring/" />
@@ -84,11 +84,7 @@ This site uses the Gitpage + Jekyll stack w...
 
   
     
-    <category term="Elden Ring" />
-    
-    <category term="Soulsborne" />
-    
-    <category term="Tarnished" />
+    <category term="Art" />
     
   
 
@@ -124,7 +120,7 @@ Creating a New Site
     <link href="http://localhost:40001/posts/Bloodborne/" rel="alternate" type="text/html" title="Bloodborne in Wonderland" />
     <published>2023-08-10T16:34:00+00:00</published>
   
-    <updated>2023-08-10T16:34:00+00:00</updated>
+    <updated>2023-09-26T06:01:22+00:00</updated>
   
     <id>http://localhost:40001/posts/Bloodborne/</id>
     <content src="http://localhost:40001/posts/Bloodborne/" />
@@ -135,16 +131,6 @@ Creating a New Site
   
     
     <category term="art" />
-    
-    <category term="art pieces" />
-    
-    <category term="bloodborne" />
-    
-    <category term="soulsborne" />
-    
-    <category term="sketch" />
-    
-    <category term="arcane ink" />
     
   
 
@@ -175,7 +161,7 @@ Download &amp;amp; Replace
     <link href="http://localhost:40001/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
     <published>2019-08-09T12:55:00+00:00</published>
   
-    <updated>2019-08-09T12:55:00+00:00</updated>
+    <updated>2023-09-26T06:01:22+00:00</updated>
   
     <id>http://localhost:40001/posts/getting-started/</id>
     <content src="http://localhost:40001/posts/getting-started/" />
@@ -185,9 +171,7 @@ Download &amp;amp; Replace
 
   
     
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
+    <category term="Introduction" />
     
   
 

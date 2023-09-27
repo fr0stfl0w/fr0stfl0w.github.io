@@ -123,8 +123,43 @@ Probably the most straightforward out of all the tutorials, he just dives right 
 5:46 vol.py -f cridex.vmem windows.pstree 
 ----> take note of explorer.exe to reader_s1.exe
 6:08 View processes currently trying to hide
-----> vol.py -f cridex.vmem profile = Win... psxview
-----> 
+----> vol.py -f cridex.vmem profia vle = Win... psxview
+----> there's not quite a volatility equivalent , but just gets lumped with pstree and pslist
+----> vol.py -f .vmem windows.psscan
+6:20 - The 1st two columns, the pslist & psscan. If any of these register as fake
+----> If an entry is found in psscan but not psslist, it is attempting to hide
+6:50 - Check for any sockets or open connections ( in 3 steps) 
+----> vol.py -f cridex.vmem connscan (windows.netscan)
+----> vol.py -f cridex.vmem sockets ("All the sockets currently running + PID")
+----> Communication link between 2 programs
+7:26 - All the sockets currently running + PID
+8:09 - netscan
+8:20 - Three Other Plugins
+vol.py -f cridex.vmem  cmdline --> windows.cmdline.Cmdline
+8:36 - We know from our original pstree that PID 1484=suspicious 
+---> path: C:\Program Files \Adobe\Reader 9.0\Reader\Reader_S1.exe
+9:10 - cmdline should give us a complete path for how these two programs are actually run
+9:21 - Dump the memory area that runs this executable
+---> volatility -f cridex.vmem --profile=WinXPSP2x86 procdump -p 1640
+10:01 - In his video, he gave a dumpfile of 1640, the file was very dlls named this
+10:10 - Addressable memory being used by the executable 
+vol.py -f cridex.vmem -o . windows.memmap --dump --pid 1640
+10:40 - Look closer at the memory of what was going on inside of this reader.exe
+10:50 - strings 1640.dmp | grep -FI "41.168.5.140" -c 5
+compare this with thirteen cubed, which had 
+vol.py -f cridex.vmem windows.pslist | grep i ()
+vol.py -f cridex.vmem windows.pslist --pid
+vol.py -f cridex.vmem windows.cmdline --pid 1484
+11:25 - Here in the .dmp strings we can see communication with this IP Address using a POST, potentially exfiltrating info.
+12:17 - We could sscroll through the entire dmp file, in the video he found various banking urls
+12:40 - we could possibly reverse engineer it or upload the .dmp to VirusTotal
+13:45 - What is launching this malware? Dive into the registry
+14:12 - Most malware will look to see if infected files are still present at system startup + communicate with that .exe every few minutes
+14:25 - If that .exe has been removed, the payload will rebuild the executable but with a different name. Need to find the payload 
+15:18 - volatility -f cridex.vmem hivelist
+15:27 - What is hiding in one of the keys? Running as an exe at start
+16:55 - See my association with this exe and 1640 weird process
+17:20 - strings 1640.dmp | grep -Fi "Kb000207877.exe"
 
 ```
 ### Varonis

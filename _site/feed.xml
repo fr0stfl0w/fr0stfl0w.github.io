@@ -4,7 +4,7 @@
   <id>http://localhost:40001/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2023-09-26T19:17:55+00:00</updated>
+  <updated>2023-09-26T22:28:15+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:40001/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:40001/posts/volatility-part-1/" rel="alternate" type="text/html" title="Volatilty (Part 1)" />
     <published>2023-09-26T12:55:00+00:00</published>
   
-    <updated>2023-09-26T18:43:40+00:00</updated>
+    <updated>2023-09-26T19:36:45+00:00</updated>
   
     <id>http://localhost:40001/posts/volatility-part-1/</id>
     <content src="http://localhost:40001/posts/volatility-part-1/" />
@@ -76,7 +76,7 @@ Tutorials Used
     <link href="http://localhost:40001/posts/intro-to-this-site/" rel="alternate" type="text/html" title="How To Use This Site" />
     <published>2023-09-23T06:10:00+00:00</published>
   
-    <updated>2023-09-26T16:01:52+00:00</updated>
+    <updated>2023-09-26T19:36:45+00:00</updated>
   
     <id>http://localhost:40001/posts/intro-to-this-site/</id>
     <content src="http://localhost:40001/posts/intro-to-this-site/" />
@@ -120,7 +120,7 @@ This site uses the Gitpage + Jekyll stack with the C...
     <link href="http://localhost:40001/posts/Elden-Ring/" rel="alternate" type="text/html" title="On The Nature of Tarnished Souls" />
     <published>2023-09-15T12:55:00+00:00</published>
   
-    <updated>2023-09-26T16:01:52+00:00</updated>
+    <updated>2023-09-26T19:36:45+00:00</updated>
   
     <id>http://localhost:40001/posts/Elden-Ring/</id>
     <content src="http://localhost:40001/posts/Elden-Ring/" />

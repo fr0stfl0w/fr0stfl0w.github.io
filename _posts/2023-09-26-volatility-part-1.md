@@ -160,8 +160,8 @@ vol.py -f cridex.vmem windows.cmdline --pid 1484
 15:27 - What is hiding in one of the keys? Running as an exe at start
 16:55 - See my association with this exe and 1640 weird process
 17:20 - strings 1640.dmp | grep -Fi "Kb000207877.exe"
-
 ```
+
 ### Varonis
 
 <p> <a href="(https://www.varonis.com/blog/how-to-use-volatility" alt="Varonis - how to use Volatility" target="_new"><img src="https://info.varonis.com/hubfs/Blog_Volatility_BlogHero_202203_FNL.png" width="300"/></a>

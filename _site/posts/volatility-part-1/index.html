@@ -56,21 +56,21 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s" />
 <meta property="og:description" content="Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s" />
-<link rel="canonical" href="http://localhost:40001/posts/volatility-part-1/" />
-<meta property="og:url" content="http://localhost:40001/posts/volatility-part-1/" />
+<link rel="canonical" href="http://localhost:4000/posts/volatility-part-1/" />
+<meta property="og:url" content="http://localhost:4000/posts/volatility-part-1/" />
 <meta property="og:site_name" content="Scavengers’ Repo" />
-<meta property="og:image" content="http://localhost:40001/assets/img/gallery-ink-executioner.jpg" />
+<meta property="og:image" content="http://localhost:4000/assets/img/gallery-ink-executioner.jpg" />
 <meta property="og:image:alt" content="Basic intro to Volatility and Host-Based Forensics in General" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-09-26T12:55:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:40001/assets/img/gallery-ink-executioner.jpg" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/gallery-ink-executioner.jpg" />
 <meta name="twitter:image:alt" content="Basic intro to Volatility and Host-Based Forensics in General" />
 <meta property="twitter:title" content="Volatilty (Part 1)" />
 <meta name="twitter:site" content="@technomancer_01" />
 <meta name="twitter:creator" content="@technomancer_01" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-26T19:36:45+00:00","datePublished":"2023-09-26T12:55:00+00:00","description":"Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s","headline":"Volatilty (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Basic intro to Volatility and Host-Based Forensics in General","url":"http://localhost:40001/assets/img/gallery-ink-executioner.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:40001/posts/volatility-part-1/"},"url":"http://localhost:40001/posts/volatility-part-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-27T05:38:36+00:00","datePublished":"2023-09-26T12:55:00+00:00","description":"Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s","headline":"Volatilty (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Basic intro to Volatility and Host-Based Forensics in General","url":"http://localhost:4000/assets/img/gallery-ink-executioner.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/volatility-part-1/"},"url":"http://localhost:4000/posts/volatility-part-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1269,7 +1269,7 @@
 
 <time
   
-  data-ts="1695757005"
+  data-ts="1695793116"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -1330,9 +1330,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="793 words"
+  title="1236 words"
 >
-  <em>4 min</em> read</span>
+  <em>6 min</em> read</span>
 
     </div>
     <!-- .d-flex -->
@@ -1508,6 +1508,40 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
 19
 20
 21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
 </pre></td><td class="rouge-code"><pre><span class="mi">1</span><span class="p">:</span><span class="mi">08</span> <span class="o">-</span> <span class="n">Cridex</span> <span class="n">Sample</span> <span class="p">(</span> <span class="n">I</span> <span class="n">already</span> <span class="n">downloaded</span> <span class="n">this</span> <span class="ow">and</span> <span class="n">put</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">my</span> <span class="n">volatility</span> <span class="n">folder</span> <span class="k">for</span> <span class="n">ease</span> <span class="n">of</span> <span class="n">access</span><span class="p">)</span>
 <span class="mi">1</span><span class="p">:</span><span class="mi">52</span> <span class="o">-</span> <span class="n">Extract</span> <span class="n">to</span> <span class="n">memdump</span> <span class="p">(</span><span class="n">user</span> <span class="n">created</span><span class="p">)</span>
 <span class="mi">2</span><span class="p">:</span><span class="mi">45</span> <span class="o">-</span> <span class="n">Runs</span> <span class="n">volatility</span> <span class="k">as</span> <span class="n">a</span> <span class="n">command</span><span class="p">,</span> <span class="n">but</span> <span class="n">I</span> <span class="n">just</span> <span class="n">did</span> <span class="n">python</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span>
@@ -1526,10 +1560,45 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
 <span class="mi">5</span><span class="p">:</span><span class="mi">46</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">windows</span><span class="p">.</span><span class="n">pstree</span> 
 <span class="o">----&gt;</span> <span class="n">take</span> <span class="n">note</span> <span class="n">of</span> <span class="n">explorer</span><span class="p">.</span><span class="n">exe</span> <span class="n">to</span> <span class="n">reader_s1</span><span class="p">.</span><span class="n">exe</span>
 <span class="mi">6</span><span class="p">:</span><span class="mi">08</span> <span class="n">View</span> <span class="n">processes</span> <span class="n">currently</span> <span class="n">trying</span> <span class="n">to</span> <span class="n">hide</span>
-<span class="o">----&gt;</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">profile</span> <span class="o">=</span> <span class="n">Win</span><span class="p">...</span> <span class="n">psxview</span>
-<span class="o">----&gt;</span> 
+<span class="o">----&gt;</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">profia</span> <span class="n">vle</span> <span class="o">=</span> <span class="n">Win</span><span class="p">...</span> <span class="n">psxview</span>
+<span class="o">----&gt;</span> <span class="n">there</span><span class="s">'s not quite a volatility equivalent , but just gets lumped with pstree and pslist
+----&gt; vol.py -f .vmem windows.psscan
+6:20 - The 1st two columns, the pslist &amp; psscan. If any of these register as fake
+----&gt; If an entry is found in psscan but not psslist, it is attempting to hide
+6:50 - Check for any sockets or open connections ( in 3 steps) 
+----&gt; vol.py -f cridex.vmem connscan (windows.netscan)
+----&gt; vol.py -f cridex.vmem sockets ("All the sockets currently running + PID")
+----&gt; Communication link between 2 programs
+7:26 - All the sockets currently running + PID
+8:09 - netscan
+8:20 - Three Other Plugins
+vol.py -f cridex.vmem  cmdline --&gt; windows.cmdline.Cmdline
+8:36 - We know from our original pstree that PID 1484=suspicious 
+---&gt; path: C:\Program Files \Adobe\Reader 9.0\Reader\Reader_S1.exe
+9:10 - cmdline should give us a complete path for how these two programs are actually run
+9:21 - Dump the memory area that runs this executable
+---&gt; volatility -f cridex.vmem --profile=WinXPSP2x86 procdump -p 1640
+10:01 - In his video, he gave a dumpfile of 1640, the file was very dlls named this
+10:10 - Addressable memory being used by the executable 
+vol.py -f cridex.vmem -o . windows.memmap --dump --pid 1640
+10:40 - Look closer at the memory of what was going on inside of this reader.exe
+10:50 - strings 1640.dmp | grep -FI "41.168.5.140" -c 5
+compare this with thirteen cubed, which had 
+vol.py -f cridex.vmem windows.pslist | grep i ()
+vol.py -f cridex.vmem windows.pslist --pid
+vol.py -f cridex.vmem windows.cmdline --pid 1484
+11:25 - Here in the .dmp strings we can see communication with this IP Address using a POST, potentially exfiltrating info.
+12:17 - We could sscroll through the entire dmp file, in the video he found various banking urls
+12:40 - we could possibly reverse engineer it or upload the .dmp to VirusTotal
+13:45 - What is launching this malware? Dive into the registry
+14:12 - Most malware will look to see if infected files are still present at system startup + communicate with that .exe every few minutes
+14:25 - If that .exe has been removed, the payload will rebuild the executable but with a different name. Need to find the payload 
+15:18 - volatility -f cridex.vmem hivelist
+15:27 - What is hiding in one of the keys? Running as an exe at start
+16:55 - See my association with this exe and 1640 weird process
+17:20 - strings 1640.dmp | grep -Fi "Kb000207877.exe"
+</span></pre></td></tr></tbody></table></code></div></div>
 
-</pre></td></tr></tbody></table></code></div></div>
 <h3 id="varonis"><span class="me-2">Varonis</span><a href="#varonis" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p> <a href="(https://www.varonis.com/blog/how-to-use-volatility" alt="Varonis - how to use Volatility" target="_new"
@@ -1653,7 +1722,7 @@ pstree - for spotting malicious processes masquerading as valid ones.</p>
     
       
       <a
-        href="https://twitter.com/intent/tweet?text=Volatilty%20(Part%201)%20-%20Scavengers'%20Repo&url=http%3A%2F%2Flocalhost%3A40001%2Fposts%2Fvolatility-part-1%2F"
+        href="https://twitter.com/intent/tweet?text=Volatilty%20(Part%201)%20-%20Scavengers'%20Repo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fvolatility-part-1%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -1666,7 +1735,7 @@ pstree - for spotting malicious processes masquerading as valid ones.</p>
     
       
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Volatilty%20(Part%201)%20-%20Scavengers'%20Repo&u=http%3A%2F%2Flocalhost%3A40001%2Fposts%2Fvolatility-part-1%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Volatilty%20(Part%201)%20-%20Scavengers'%20Repo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fvolatility-part-1%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -1679,7 +1748,7 @@ pstree - for spotting malicious processes masquerading as valid ones.</p>
     
       
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A40001%2Fposts%2Fvolatility-part-1%2F&text=Volatilty%20(Part%201)%20-%20Scavengers'%20Repo"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fvolatility-part-1%2F&text=Volatilty%20(Part%201)%20-%20Scavengers'%20Repo"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1744,6 +1813,13 @@ pstree - for spotting malicious processes masquerading as valid ones.</p>
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/volatility-part-1/">Volatilty (Part 1)</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/Elden-Ring/">On The Nature of Tarnished Souls</a>
         </li>
       
@@ -1752,13 +1828,6 @@ pstree - for spotting malicious processes masquerading as valid ones.</p>
         
         <li class="text-truncate lh-lg">
           <a href="/posts/intro-to-this-site/">How To Use This Site</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/volatility-part-1/">Volatilty (Part 1)</a>
         </li>
       
         

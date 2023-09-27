@@ -56,6 +56,8 @@ Github Repo > **Releases** > Source Code (.zip)
 
 cd into the repository and run 
 
+`` pip3 install -r requirements.txt``
+
 ``vol.py -f <.VMEM SAMPLE> windows.info``
 
 ## 1. Quick Command Toolbox
@@ -85,7 +87,7 @@ python vol.py -cridex.vmem -o . windows.memmap --dump --pid 1640
 
 strings 1640.dmp | grep -Fi "weird thing, etc" -C 5
 
-python python vol.py -f cridex.vmem windows.malfind 
+python vol.py -f cridex.vmem windows.malfind 
 ```
 
 ## 2. Annotations 
@@ -100,19 +102,73 @@ Highly recommend that you actually watch these videos or read through them, thes
 Probably the most straightforward out of all the tutorials, he just dives right into it. Keep in mind that he uses a **Linux** host to examine a .vmem image of an infected Windows machine. He is also using Volatility 2. I didn't have much trouble getting past this on a Windows workstation using Volatility 3 and Python 3, but you may need to pull up 
 [Ashley Pearson's Volatility 2-3 cheatsheet](https://blog.onfvp.com/post/volatility-cheatsheet). 
 
+
+#### Timestamps 
+```python
+1:08 - Cridex Sample ( I already downloaded this and put it in my volatility folder for ease of access)
+1:52 - Extract to memdump (user created)
+2:45 - Runs volatility as a command, but I just did python vol.py
+3:03 - volatility 3-2.4.1\vol.py -f cridex_memdump\cridex.vmem image.info
+----> -f: use the following file (cridex.vmem) image.info
+----> image.info is a basic Volatility module
+----> vol.py -f cridex.vmem windows.info
+----> this module gives basic system info, like when it was taken,  mount system 
+3:46 - vol.py -f cridex.vmem windows.info
+4:15 - vol.py -f cridex.vmem --profile=WinXPSP2x86 pslist
+----> vol.py -f cridex.vmem windows.pslist, be aware of any that catch your attention
+4:45 - All the processes running on this machine
+5:12 - Takes note of explorer.exe & an unknown reader_s1.exe
+5:40 - volatility -f cridex.vmem --profile=WinXPSP2x86 pstree
+----> pip3 install -r .\requirements.txt -vv
+5:46 vol.py -f cridex.vmem windows.pstree 
+----> take note of explorer.exe to reader_s1.exe
+6:08 View processes currently trying to hide
+----> vol.py -f cridex.vmem profile = Win... psxview
+----> 
+
+```
 ### Varonis
 
 <p> <a href="(https://www.varonis.com/blog/how-to-use-volatility" alt="Varonis - how to use Volatility" target="_new"><img src="https://info.varonis.com/hubfs/Blog_Volatility_BlogHero_202203_FNL.png" width="300"/></a>
 </p>
 
-Unlike the other tutorials, this one goes more into malfind in the **Identifying Injected Code** part
+
+[Please check out the original tutorial, it's one of the few non video formats and goes more into malfind in the **Identifying Injected Code** part](https://www.varonis.com/blog/how-to-use-volatility)
 
 
 > "...This displays a list of processes that Volatility suspects may contain injected code based on the header information displayed in hex, the permissions, and some extracted assembly code, just because a process is listed in the output it doesn't mean the process is 100% malware."
 {: .prompt-tip }
 
+#### Identify Malicious Network Connections
+```sass
+python vol.py -f <> windows.netscan
+```
+#### Identify Injected Code
+> Things Volatility only suspects to be injected code
+
+we're looking for PAGE_EXECUTE_ReadWrite permissions
+
+Header of a Windows Executable is ```MZ```
+OR ```4D 5A```
+
+```sass
+python vol.py -f cridex.vmem windows.malfind 
+```
+#### Procdump
+extracts exe and all dlls associated
+
+```sass 
+python vol.py -f <> -o <location> windows.dumpfiles --pid []
+```
+
+#### Identify Malicious Processes 
+pslist 
+pstree - for spotting malicious processes masquerading as valid ones.
+
+> "... Windows processes always run from set locations on disk. The parent process is usually a set process."
 
 
-
-
+```
+-k: specifies a group of services to run
+```
 

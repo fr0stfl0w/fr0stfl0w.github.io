@@ -70,7 +70,7 @@
 <meta name="twitter:site" content="@technomancer_01" />
 <meta name="twitter:creator" content="@technomancer_01" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-26T18:43:40+00:00","datePublished":"2023-09-26T12:55:00+00:00","description":"Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s","headline":"Volatilty (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Basic intro to Volatility and Host-Based Forensics in General","url":"http://localhost:40001/assets/img/gallery-ink-executioner.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:40001/posts/volatility-part-1/"},"url":"http://localhost:40001/posts/volatility-part-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-26T19:36:45+00:00","datePublished":"2023-09-26T12:55:00+00:00","description":"Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s","headline":"Volatilty (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Basic intro to Volatility and Host-Based Forensics in General","url":"http://localhost:40001/assets/img/gallery-ink-executioner.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:40001/posts/volatility-part-1/"},"url":"http://localhost:40001/posts/volatility-part-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1142,6 +1142,77 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -1198,7 +1269,7 @@
 
 <time
   
-  data-ts="1695753820"
+  data-ts="1695757005"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -1259,9 +1330,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="492 words"
+  title="793 words"
 >
-  <em>2 min</em> read</span>
+  <em>4 min</em> read</span>
 
     </div>
     <!-- .d-flex -->
@@ -1344,6 +1415,8 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
 
 <p>cd into the repository and run</p>
 
+<p><code class="language-plaintext highlighter-rouge">pip3 install -r requirements.txt</code></p>
+
 <p><code class="language-plaintext highlighter-rouge">vol.py -f &lt;.VMEM SAMPLE&gt; windows.info</code></p>
 
 <h2 id="1-quick-command-toolbox"><span class="me-2">1. Quick Command Toolbox</span><a href="#1-quick-command-toolbox" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1394,7 +1467,7 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
 
 <span class="nt">strings</span> <span class="nt">1640</span><span class="nc">.dmp</span> <span class="o">|</span> <span class="nt">grep</span> <span class="nt">-Fi</span> <span class="s2">"weird thing, etc"</span> <span class="nt">-C</span> <span class="nt">5</span>
 
-<span class="nt">python</span> <span class="nt">python</span> <span class="nt">vol</span><span class="nc">.py</span> <span class="nt">-f</span> <span class="nt">cridex</span><span class="nc">.vmem</span> <span class="nt">windows</span><span class="nc">.malfind</span> 
+<span class="nt">python</span> <span class="nt">vol</span><span class="nc">.py</span> <span class="nt">-f</span> <span class="nt">cridex</span><span class="nc">.vmem</span> <span class="nt">windows</span><span class="nc">.malfind</span> 
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="2-annotations"><span class="me-2">2. Annotations</span><a href="#2-annotations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1411,6 +1484,52 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
 <p>Probably the most straightforward out of all the tutorials, he just dives right into it. Keep in mind that he uses a <strong>Linux</strong> host to examine a .vmem image of an infected Windows machine. He is also using Volatility 2. I didn’t have much trouble getting past this on a Windows workstation using Volatility 3 and Python 3, but you may need to pull up 
 <a href="https://blog.onfvp.com/post/volatility-cheatsheet">Ashley Pearson’s Volatility 2-3 cheatsheet</a>.</p>
 
+<h4 id="timestamps"><span class="me-2">Timestamps</span><a href="#timestamps" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="mi">1</span><span class="p">:</span><span class="mi">08</span> <span class="o">-</span> <span class="n">Cridex</span> <span class="n">Sample</span> <span class="p">(</span> <span class="n">I</span> <span class="n">already</span> <span class="n">downloaded</span> <span class="n">this</span> <span class="ow">and</span> <span class="n">put</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">my</span> <span class="n">volatility</span> <span class="n">folder</span> <span class="k">for</span> <span class="n">ease</span> <span class="n">of</span> <span class="n">access</span><span class="p">)</span>
+<span class="mi">1</span><span class="p">:</span><span class="mi">52</span> <span class="o">-</span> <span class="n">Extract</span> <span class="n">to</span> <span class="n">memdump</span> <span class="p">(</span><span class="n">user</span> <span class="n">created</span><span class="p">)</span>
+<span class="mi">2</span><span class="p">:</span><span class="mi">45</span> <span class="o">-</span> <span class="n">Runs</span> <span class="n">volatility</span> <span class="k">as</span> <span class="n">a</span> <span class="n">command</span><span class="p">,</span> <span class="n">but</span> <span class="n">I</span> <span class="n">just</span> <span class="n">did</span> <span class="n">python</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span>
+<span class="mi">3</span><span class="p">:</span><span class="mi">03</span> <span class="o">-</span> <span class="n">volatility</span> <span class="mi">3</span><span class="o">-</span><span class="mf">2.4</span><span class="p">.</span><span class="mi">1</span>\<span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex_memdump</span>\<span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">image</span><span class="p">.</span><span class="n">info</span>
+<span class="o">----&gt;</span> <span class="o">-</span><span class="n">f</span><span class="p">:</span> <span class="n">use</span> <span class="n">the</span> <span class="n">following</span> <span class="nb">file</span> <span class="p">(</span><span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span><span class="p">)</span> <span class="n">image</span><span class="p">.</span><span class="n">info</span>
+<span class="o">----&gt;</span> <span class="n">image</span><span class="p">.</span><span class="n">info</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">basic</span> <span class="n">Volatility</span> <span class="n">module</span>
+<span class="o">----&gt;</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">windows</span><span class="p">.</span><span class="n">info</span>
+<span class="o">----&gt;</span> <span class="n">this</span> <span class="n">module</span> <span class="n">gives</span> <span class="n">basic</span> <span class="n">system</span> <span class="n">info</span><span class="p">,</span> <span class="n">like</span> <span class="n">when</span> <span class="n">it</span> <span class="n">was</span> <span class="n">taken</span><span class="p">,</span>  <span class="n">mount</span> <span class="n">system</span> 
+<span class="mi">3</span><span class="p">:</span><span class="mi">46</span> <span class="o">-</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">windows</span><span class="p">.</span><span class="n">info</span>
+<span class="mi">4</span><span class="p">:</span><span class="mi">15</span> <span class="o">-</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="o">--</span><span class="n">profile</span><span class="o">=</span><span class="n">WinXPSP2x86</span> <span class="n">pslist</span>
+<span class="o">----&gt;</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">windows</span><span class="p">.</span><span class="n">pslist</span><span class="p">,</span> <span class="n">be</span> <span class="n">aware</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">that</span> <span class="n">catch</span> <span class="n">your</span> <span class="n">attention</span>
+<span class="mi">4</span><span class="p">:</span><span class="mi">45</span> <span class="o">-</span> <span class="n">All</span> <span class="n">the</span> <span class="n">processes</span> <span class="n">running</span> <span class="n">on</span> <span class="n">this</span> <span class="n">machine</span>
+<span class="mi">5</span><span class="p">:</span><span class="mi">12</span> <span class="o">-</span> <span class="n">Takes</span> <span class="n">note</span> <span class="n">of</span> <span class="n">explorer</span><span class="p">.</span><span class="n">exe</span> <span class="o">&amp;</span> <span class="n">an</span> <span class="n">unknown</span> <span class="n">reader_s1</span><span class="p">.</span><span class="n">exe</span>
+<span class="mi">5</span><span class="p">:</span><span class="mi">40</span> <span class="o">-</span> <span class="n">volatility</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="o">--</span><span class="n">profile</span><span class="o">=</span><span class="n">WinXPSP2x86</span> <span class="n">pstree</span>
+<span class="o">----&gt;</span> <span class="n">pip3</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="p">.</span>\<span class="n">requirements</span><span class="p">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">vv</span>
+<span class="mi">5</span><span class="p">:</span><span class="mi">46</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">windows</span><span class="p">.</span><span class="n">pstree</span> 
+<span class="o">----&gt;</span> <span class="n">take</span> <span class="n">note</span> <span class="n">of</span> <span class="n">explorer</span><span class="p">.</span><span class="n">exe</span> <span class="n">to</span> <span class="n">reader_s1</span><span class="p">.</span><span class="n">exe</span>
+<span class="mi">6</span><span class="p">:</span><span class="mi">08</span> <span class="n">View</span> <span class="n">processes</span> <span class="n">currently</span> <span class="n">trying</span> <span class="n">to</span> <span class="n">hide</span>
+<span class="o">----&gt;</span> <span class="n">vol</span><span class="p">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="n">cridex</span><span class="p">.</span><span class="n">vmem</span> <span class="n">profile</span> <span class="o">=</span> <span class="n">Win</span><span class="p">...</span> <span class="n">psxview</span>
+<span class="o">----&gt;</span> 
+
+</pre></td></tr></tbody></table></code></div></div>
 <h3 id="varonis"><span class="me-2">Varonis</span><a href="#varonis" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p> <a href="(https://www.varonis.com/blog/how-to-use-volatility" alt="Varonis - how to use Volatility" target="_new"
@@ -1418,11 +1537,55 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
         ><img data-src="https://info.varonis.com/hubfs/Blog_Volatility_BlogHero_202203_FNL.png" width="300" class="lazyload" data-proofer-ignore></a>
 </p>
 
-<p>Unlike the other tutorials, this one goes more into malfind in the <strong>Identifying Injected Code</strong> part</p>
+<p><a href="https://www.varonis.com/blog/how-to-use-volatility">Please check out the original tutorial, it’s one of the few non video formats and goes more into malfind in the <strong>Identifying Injected Code</strong> part</a></p>
 
 <blockquote class="prompt-tip">
   <p>“…This displays a list of processes that Volatility suspects may contain injected code based on the header information displayed in hex, the permissions, and some extracted assembly code, just because a process is listed in the output it doesn’t mean the process is 100% malware.”</p>
 </blockquote>
+
+<h4 id="identify-malicious-network-connections"><span class="me-2">Identify Malicious Network Connections</span><a href="#identify-malicious-network-connections" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<div class="language-sass highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sass"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">python</span> <span class="nt">vol</span><span class="nc">.py</span> <span class="nt">-f</span> <span class="o">&lt;&gt;</span> <span class="nt">windows</span><span class="nc">.netscan</span>
+</pre></td></tr></tbody></table></code></div></div>
+<h4 id="identify-injected-code"><span class="me-2">Identify Injected Code</span><a href="#identify-injected-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<blockquote>
+  <p>Things Volatility only suspects to be injected code</p>
+</blockquote>
+
+<p>we’re looking for PAGE_EXECUTE_ReadWrite permissions</p>
+
+<p>Header of a Windows Executable is <code class="language-plaintext highlighter-rouge">MZ</code>
+OR <code class="language-plaintext highlighter-rouge">4D 5A</code></p>
+
+<div class="language-sass highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sass"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">python</span> <span class="nt">vol</span><span class="nc">.py</span> <span class="nt">-f</span> <span class="nt">cridex</span><span class="nc">.vmem</span> <span class="nt">windows</span><span class="nc">.malfind</span> 
+</pre></td></tr></tbody></table></code></div></div>
+<h4 id="procdump"><span class="me-2">Procdump</span><a href="#procdump" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p>extracts exe and all dlls associated</p>
+
+<div class="language-sass highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sass"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">python</span> <span class="nt">vol</span><span class="nc">.py</span> <span class="nt">-f</span> <span class="o">&lt;&gt;</span> <span class="nt">-o</span> <span class="o">&lt;</span><span class="nt">location</span><span class="o">&gt;</span> <span class="nt">windows</span><span class="nc">.dumpfiles</span> <span class="nt">--pid</span> <span class="o">[]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="identify-malicious-processes"><span class="me-2">Identify Malicious Processes</span><a href="#identify-malicious-processes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p>pslist 
+pstree - for spotting malicious processes masquerading as valid ones.</p>
+
+<blockquote>
+  <p>“… Windows processes always run from set locations on disk. The parent process is usually a set process.”</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>-k: specifies a group of services to run
+</pre></td></tr></tbody></table></code></div></div>
 
 
 </div>
@@ -1581,13 +1744,6 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/volatility-part-1/">Volatilty (Part 1)</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/Elden-Ring/">On The Nature of Tarnished Souls</a>
         </li>
       
@@ -1596,6 +1752,13 @@ https://img.youtube.com/vi/4lURQHslmMc/maxresdefault.jpg
         
         <li class="text-truncate lh-lg">
           <a href="/posts/intro-to-this-site/">How To Use This Site</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/volatility-part-1/">Volatilty (Part 1)</a>
         </li>
       
         

@@ -5,16 +5,28 @@ date: 2023-09-26 20:55:00 +0800
 categories: [tech]
 tags: [tech, volatility forensics, plague doctor]
 pin: false
-img_path: '/assets/img'
+# img_path: '/assets/img'
 
 image:
-  path: gallery-ink-executioner.jpg
+  path: /assets/img/gallery-ink-executioner.jpg
   lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
   alt: Basic intro to Volatility and Host-Based Forensics in General
 
 ---
 
 Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s
+
+## Raw Notes
+
+![Desktop View](/assets/img/tutorials/volatility-part1/volpart1.jpeg){: width="500" height="589" }
+_Raw Notes 1_
+![Desktop View](/assets/img/tutorials/volatility-part1/volpart2.jpeg){: width="572" height="589" }
+_Raw Notes 2_
+![Desktop View](/assets/img/tutorials/volatility-part1/volpart3.jpeg){: width="572" height="589" }
+_Raw Notes 3_
+![Desktop View](/assets/img/tutorials/volatility-part1/volpart4.jpeg){: width="500" height="589" }
+_Raw Notes 4_
+
 
 ## Tutorials Used
 

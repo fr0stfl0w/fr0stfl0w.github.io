@@ -1,9 +1,9 @@
 ---
 title: MemProcFS (Part 1)
 author: erika
-date: 2023-08-25 11:33:00 +0800
+date: 2023-09-28 11:33:00 +0800
 categories: [tech]
-tags: [forensics, memprocfs]
+tags: [forensics, memprocfs, annotations, 13cubed]
 pin: false
 math: true
 mermaid: true
@@ -14,172 +14,157 @@ image:
   alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
-This post is to show Markdown syntax rendering on [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), you can also use it as an example of writing. Now, let's start looking at text and typography.
+Annotations and quick copy-pastes for MemprocFS, based on 13Cubed's tutorial. I don't see a whole lot of other people using this tool but it has been useful so I guess here we are. 
 
-## Headings
+## TLDR SpeedRun
 
-<h1 class="mt-5">H1 - heading</h1>
+Download the .zip off of the [github releases](https://github.com/ufrisk/MemProcFS/releases) AND the [Dokany msi](https://github.com/dokan-dev/dokany/releases) 
 
-<h2 data-toc-skip>H2 - heading</h2>
+Unzip the file and then run the .exe from commandline/terminal/powershell
 
-<h3 data-toc-skip>H3 - heading</h3>
-
-<h4 data-toc-skip>H4 - heading</h4>
-
-## Paragraph
-
-Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.
-
-## Lists
-
-### Ordered list
-
-1. Firstly
-2. Secondly
-3. Thirdly
-
-### Unordered list
-
-- Chapter
-  + Section
-    * Paragraph
-
-### ToDo list
-
-- [ ] Job
-  + [x] Step 1
-  + [x] Step 2
-  + [ ] Step 3
-
-### Description list
-
-Sun
-: the star around which the earth orbits
-
-Moon
-: the natural satellite of the earth, visible by reflected light from the sun
-
-## Block Quote
-
-> This line shows the _block quote_.
-
-## Prompts
-
-> An example showing the `tip` type prompt.
+```console
+MemProcFS.exe -device ..\memdump.vmem -forensic 1
+```
+> You need to find this file, it should be in the directory you downloaded and unzipped.
 {: .prompt-tip }
 
-> An example showing the `info` type prompt.
-{: .prompt-info }
+```console
+MemProcFS.exe -device [the .vmem image to examine] -forensic 
 
-> An example showing the `warning` type prompt.
-{: .prompt-warning }
+- forensic Starts a forensic scan of the physical memory
 
-> An example showing the `danger` type prompt.
-{: .prompt-danger }
-
-## Tables
-
-| Company                      | Contact          | Country |
-|:-----------------------------|:-----------------|--------:|
-| Alfreds Futterkiste          | Maria Anders     | Germany |
-| Island Trading               | Helen Bennett    | UK      |
-| Magazzini Alimentari Riuniti | Giovanni Rovelli | Italy   |
-
-## Links
-
-<http://127.0.0.1:4000>
-
-## Footnote
-
-Click the hook will locate the footnote[^footnote], and here is another footnote[^fn-nth-2].
-
-## Inline code
-
-This is an example of `Inline Code`.
-
-## Filepath
-
-Here is the `/path/to/the/file.extend`{: .filepath}.
-
-## Code blocks
-
-### Common
+MemProc will tkae a bit for the /forensics folder to show up but it will contain info regarding things like timelines of processes and dlls loaded
 
 ```
-This is a common code snippet, without syntax highlight and line number.
+> "... directories and files related to the MemProcFS forensic sub-system. The forensic sub-system is a collection of more thorough batch-oriented analysis tasks that may be undertaken on memory dumps." 
+
+[https://github.com/ufrisk/MemProcFS/wiki/FS_Forensic](MemprocFS Wiki)
+
+> Take Note: that .vmem file is that same cridex.vmem sample we used with Volatility. 
+{: .prompt-tip }
+
+When you run this it will seem like nothing is happening, and you can for now ignore the python warning. But if you look at your Windows directory, you will see the :\M image loaded for you to browse through like a file directory.
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/raw notes 1.jpeg){: width="500" height="589" }
+_Raw Notes 1_
+![Desktop View](/assets/img/tutorials/memprocfs-part1/raw notes 2.jpeg){: width="572" height="589" }
+_Raw Notes 2_
+![Desktop View](/assets/img/tutorials/memprocfs-part1/raw notes 3.jpeg){: width="572" height="589" }
+_Raw Notes 3_
+
+## Part 0: AKA Installation
+
+This was the trickiest part IMO especially if you are some casual like me who has NO IDEA what forensics tools are like.
+
+You will need an infected .vmem file, such as the cridex one in [Volatility's](https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples).
+
+You will need to [ download MemProcFS](https://github.com/ufrisk/MemProcFS/releases) off of their site along with [installing Dokany .msi](https://github.com/dokan-dev/dokany/releases) if you're doing this on a Windows host
+
+For me, I did this all on a Windows host. 
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial1.png){: width="972" height="589" }
+_Installing Dokany_
+
+
+## Part 1: Running MemProc
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial2.png){: width="972" height="589" }
+_Running Memproc_
+```console
+.\MemProcFS.exe -device '[.VMEM SAMPLE]' -forensic 1
 ```
 
-### Specific Language
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial3.png){: width="972" height="589" }
+_Using the .vmem John Hammond used in his walkthrough_
 
-```bash
-if [ $? -ne 0 ]; then
-  echo "The command was not successful.";
-  #do the needful / exit
-fi;
+
+:M\ directory appearing
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4.png){: width="972" height="589" }
+_The image getting mounted_
+
+
+## Part 2: Running Through
+
+5:30 is the approximate timestamp for when this starts.
+
+Take a look at the directory, namely **pid**,  **name**, **registry**, **sys**. 
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4-2.png){: width="972" height="589" }
+_folder directory_
+
+### sys
+#### \proc
+
+Process hierarchy, textfile roughtly corresponding to a pstree output in Volatility
+
+note: explorer should not be the parent process for svchost.exe
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial5.png){: width="972" height="589" }
+_examining proc_
+
+### sys
+#### \net 
+
+Netstat output/netscan in volatility
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial6.png){: width="972" height="589" }
+_folder directory_
+
+### registry
+
+Similar to regedit
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial7.png){: width="972" height="589" }
+_folder directory_
+
+#### Run\RunOnce 
+
+The Run/RunOnce registry keys make the program run once the user logs in
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial8.png){: width="972" height="589" }
+_folder directory_
+
+```M:\registry\HKLM\Software\Microsoft\Windows\Current Version\Run```
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial9.png){: width="972" height="589" }
+_folder directory_
+
+### name 
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial10.png){: width="972" height="589" }
+_folder directory_
+
+files -> handles will tell you the files this process was interacting with 
+files -> modules will tell you all the dlls with which the process was interacting
+files -> vads (virtual address descriptor) is how windows keeps track with what process memory is allocated to a process 
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial11.png){: width="972" height="589" }
+_handles_
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial14.png){: width="972" height="589" }
+_folder directory_
+
+Check the M:\registry\hive_files  to tell you a list of the PID's by name (dash the actual PID #)
+
+> Registry Hives: logical group of keys, subkeys, and values in the registry. Each time a new user logs on, a new hive gets created for that user with a separate file for the user
+{: .prompt-tip } 
+
+## Part 3: M:/forensic Folder
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial15.png){: width="972" height="589" }
+_folder directory_
+
+Forensic > Timeline is a list of processes in memory.
+```console
+M:\forensic\timeline\timeline_registry
+
+M:\forensic\timeline\timeline_net
 ```
 
-### Specific filename
 
-```sass
-@import
-  "colors/light-typography",
-  "colors/dark-typography";
+Registry paths and timestamps associated with them
+
+```console
+forensic\findevil
 ```
-{: file='_sass/jekyll-theme-chirpy.scss'}
-
-## Mathematics
-
-The mathematics powered by [**MathJax**](https://www.mathjax.org/):
-
-$$ \sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6} $$
-
-When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
-
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
-
-## Mermaid SVG
-
-```mermaid
- gantt
-  title  Adding GANTT diagram functionality to mermaid
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
-```
-
-## Images
-
-### Default (with caption)
-
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" }
-_Full screen width and center alignment_
-
-### Left aligned
-
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-75 .normal}
-
-### Float to left
-
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .left}
-Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
-
-### Float to right
-
-![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .right}
-Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
-
-### Dark/Light mode & Shadow
-
-The image below will toggle dark/light mode based on theme preference, notice it has shadows.
-
-![light mode only](/posts/20190808/devtools-light.png){: .light .w-75 .shadow .rounded-10 w='1212' h='668' }
-![dark mode only](/posts/20190808/devtools-dark.png){: .dark .w-75 .shadow .rounded-10 w='1212' h='668' }
-
-## Video
-
-{% include embed/youtube.html id='Balreaj8Yqs' %}
-
-## Reverse Footnote
-
-[^footnote]: The footnote source
-[^fn-nth-2]: The 2nd footnote source
+This may or may not have content since it's only approximate

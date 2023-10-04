@@ -54,15 +54,15 @@
 <meta property="og:title" content="MemProcFS (Part 1)" />
 <meta name="author" content="Erika" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography." />
-<meta property="og:description" content="This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography." />
+<meta name="description" content="Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are." />
+<meta property="og:description" content="Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are." />
 <link rel="canonical" href="http://localhost:4000/posts/memprocfs-part-1/" />
 <meta property="og:url" content="http://localhost:4000/posts/memprocfs-part-1/" />
 <meta property="og:site_name" content="Scavengers’ Repo" />
 <meta property="og:image" content="http://localhost:4000/assets/img/banner-crow.jpg" />
 <meta property="og:image:alt" content="Responsive rendering of Chirpy theme on multiple devices." />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-08-25T03:33:00+00:00" />
+<meta property="article:published_time" content="2023-09-28T03:33:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://localhost:4000/assets/img/banner-crow.jpg" />
 <meta name="twitter:image:alt" content="Responsive rendering of Chirpy theme on multiple devices." />
@@ -70,7 +70,7 @@
 <meta name="twitter:site" content="@technomancer_01" />
 <meta name="twitter:creator" content="@technomancer_01" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-08-25T03:33:00+00:00","datePublished":"2023-08-25T03:33:00+00:00","description":"This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.","headline":"MemProcFS (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Responsive rendering of Chirpy theme on multiple devices.","url":"http://localhost:4000/assets/img/banner-crow.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/memprocfs-part-1/"},"url":"http://localhost:4000/posts/memprocfs-part-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-28T03:33:00+00:00","datePublished":"2023-09-28T03:33:00+00:00","description":"Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are.","headline":"MemProcFS (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Responsive rendering of Chirpy theme on multiple devices.","url":"http://localhost:4000/assets/img/banner-crow.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/memprocfs-part-1/"},"url":"http://localhost:4000/posts/memprocfs-part-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -862,14 +862,6 @@
 
       
     
-      
-
-      
-      
-      
-
-      
-    
 
     <!-- take out classes -->
     
@@ -924,109 +916,6 @@
     
     
 
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-
-    
-
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
-    
-      
-        <!-- add SVG placehoder -->
-        
-      
-    
-
-    <!-- Bypass the HTML-proofer test -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-      
-    
-
-    <!-- combine -->
-    
-
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
     
       
 
@@ -1147,6 +1036,85 @@
 
       
     
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1217,6 +1185,955 @@
       
 
       
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+        <!-- add SVG placehoder -->
+        
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
     
       
 
@@ -1375,90 +2292,22 @@
       
 
     
-      
 
-      
-      
+    
 
-      
-      
-      
+  
 
-      
+  
+  
+
+  
+    
+    
 
     
       
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
+        
+        
       
 
       
@@ -1559,121 +2408,8 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
-
-  
-
-  
-  
 
   
 
@@ -1707,13 +2443,13 @@
 
 <time
   
-  data-ts="1692934380"
+  data-ts="1695871980"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Aug 25, 2023
+  Sep 28, 2023
 </time>
 
     </span>
@@ -1770,7 +2506,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="610 words"
+  title="563 words"
 >
   <em>3 min</em> read</span>
 
@@ -1781,235 +2517,178 @@
 </header>
 
 <div class="content">
-  <p>This post is to show Markdown syntax rendering on <a href="https://github.com/cotes2020/jekyll-theme-chirpy/fork"><strong>Chirpy</strong></a>, you can also use it as an example of writing. Now, let’s start looking at text and typography.</p>
+  <p>Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are.</p>
 
-<h2 id="headings"><span class="me-2">Headings</span><a href="#headings" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="tldr-speedrun"><span class="me-2">TLDR SpeedRun</span><a href="#tldr-speedrun" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h1 class="mt-5">H1 - heading</h1>
+<p>Download the .zip off of the <a href="https://github.com/ufrisk/MemProcFS/releases">github releases</a> AND the <a href="https://github.com/dokan-dev/dokany/releases">Dokany msi</a></p>
 
-<h2 data-toc-skip="">H2 - heading</h2>
+<p>Unzip the file and then run the .exe from commandline/terminal/powershell</p>
 
-<h3 data-toc-skip="">H3 - heading</h3>
-
-<h4 data-toc-skip="">H4 - heading</h4>
-
-<h2 id="paragraph"><span class="me-2">Paragraph</span><a href="#paragraph" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.</p>
-
-<h2 id="lists"><span class="me-2">Lists</span><a href="#lists" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="ordered-list"><span class="me-2">Ordered list</span><a href="#ordered-list" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ol>
-  <li>Firstly</li>
-  <li>Secondly</li>
-  <li>Thirdly</li>
-</ol>
-
-<h3 id="unordered-list"><span class="me-2">Unordered list</span><a href="#unordered-list" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ul>
-  <li>Chapter
-    <ul>
-      <li>Section
-        <ul>
-          <li>Paragraph</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="todo-list"><span class="me-2">ToDo list</span><a href="#todo-list" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ul class="task-list">
-  <li class="task-list-item"><i class="far fa-circle fa-fw"></i>Job
-    <ul class="task-list">
-      <li class="task-list-item"><i class="fas fa-check-circle fa-fw checked"></i>Step 1</li>
-      <li class="task-list-item"><i class="fas fa-check-circle fa-fw checked"></i>Step 2</li>
-      <li class="task-list-item"><i class="far fa-circle fa-fw"></i>Step 3</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="description-list"><span class="me-2">Description list</span><a href="#description-list" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<dl>
-  <dt>Sun</dt>
-  <dd>the star around which the earth orbits</dd>
-  <dt>Moon</dt>
-  <dd>the natural satellite of the earth, visible by reflected light from the sun</dd>
-</dl>
-
-<h2 id="block-quote"><span class="me-2">Block Quote</span><a href="#block-quote" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<blockquote>
-  <p>This line shows the <em>block quote</em>.</p>
-</blockquote>
-
-<h2 id="prompts"><span class="me-2">Prompts</span><a href="#prompts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<blockquote class="prompt-tip">
-  <p>An example showing the <code class="language-plaintext highlighter-rouge">tip</code> type prompt.</p>
-</blockquote>
-
-<blockquote class="prompt-info">
-  <p>An example showing the <code class="language-plaintext highlighter-rouge">info</code> type prompt.</p>
-</blockquote>
-
-<blockquote class="prompt-warning">
-  <p>An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.</p>
-</blockquote>
-
-<blockquote class="prompt-danger">
-  <p>An example showing the <code class="language-plaintext highlighter-rouge">danger</code> type prompt.</p>
-</blockquote>
-
-<h2 id="tables"><span class="me-2">Tables</span><a href="#tables" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Company</th>
-      <th style="text-align: left">Contact</th>
-      <th style="text-align: right">Country</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Alfreds Futterkiste</td>
-      <td style="text-align: left">Maria Anders</td>
-      <td style="text-align: right">Germany</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Island Trading</td>
-      <td style="text-align: left">Helen Bennett</td>
-      <td style="text-align: right">UK</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Magazzini Alimentari Riuniti</td>
-      <td style="text-align: left">Giovanni Rovelli</td>
-      <td style="text-align: right">Italy</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h2 id="links"><span class="me-2">Links</span><a href="#links" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p><a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a></p>
-
-<h2 id="footnote"><span class="me-2">Footnote</span><a href="#footnote" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Click the hook will locate the footnote<sup id="fnref:footnote" role="doc-noteref"><a href="#fn:footnote" class="footnote" rel="footnote">1</a></sup>, and here is another footnote<sup id="fnref:fn-nth-2" role="doc-noteref"><a href="#fn:fn-nth-2" class="footnote" rel="footnote">2</a></sup>.</p>
-
-<h2 id="inline-code"><span class="me-2">Inline code</span><a href="#inline-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>This is an example of <code class="language-plaintext highlighter-rouge">Inline Code</code>.</p>
-
-<h2 id="filepath"><span class="me-2">Filepath</span><a href="#filepath" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Here is the <code class="language-plaintext filepath highlighter-rouge">/path/to/the/file.extend</code>.</p>
-
-<h2 id="code-blocks"><span class="me-2">Code blocks</span><a href="#code-blocks" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="common"><span class="me-2">Common</span><a href="#common" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>This is a common code snippet, without syntax highlight and line number.
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="go">MemProcFS.exe -device ..\memdump.vmem -forensic 1
+</span></pre></td></tr></tbody></table></code></div></div>
+<blockquote class="prompt-tip">
+  <p>You need to find this file, it should be in the directory you downloaded and unzipped.</p>
+</blockquote>
 
-<h3 id="specific-language"><span class="me-2">Specific Language</span><a href="#specific-language" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-ne</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
-  </span><span class="nb">echo</span> <span class="s2">"The command was not successful."</span><span class="p">;</span>
-  <span class="c">#do the needful / exit</span>
-<span class="k">fi</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></div></div>
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="go">MemProcFS.exe -device [the .vmem image to examine] -forensic 
 
-<h3 id="specific-filename"><span class="me-2">Specific filename</span><a href="#specific-filename" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+- forensic Starts a forensic scan of the physical memory
 
-<div file="_sass/jekyll-theme-chirpy.scss" class="language-sass highlighter-rouge"><div class="code-header">
-        <span data-label-text="_sass/jekyll-theme-chirpy.scss"><i class="far fa-file-code fa-fw"></i></span>
+MemProc will tkae a bit for the /forensics folder to show up but it will contain info regarding things like timelines of processes and dlls loaded
+
+</span></pre></td></tr></tbody></table></code></div></div>
+<blockquote>
+  <p>“… directories and files related to the MemProcFS forensic sub-system. The forensic sub-system is a collection of more thorough batch-oriented analysis tasks that may be undertaken on memory dumps.”</p>
+</blockquote>
+
+<p><a href="MemprocFS Wiki">https://github.com/ufrisk/MemProcFS/wiki/FS_Forensic</a></p>
+
+<blockquote class="prompt-tip">
+  <p>Take Note: that .vmem file is that same cridex.vmem sample we used with Volatility.</p>
+</blockquote>
+
+<p>When you run this it will seem like nothing is happening, and you can for now ignore the python warning. But if you look at your Windows directory, you will see the :\M image loaded for you to browse through like a file directory.</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/raw notes 1.jpeg" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/raw notes 1.jpeg" alt="Desktop View" width="500" height="589" class="lazyload" data-proofer-ignore></a>
+<em>Raw Notes 1</em>
+<a href="/assets/img/tutorials/memprocfs-part1/raw notes 2.jpeg" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/raw notes 2.jpeg" alt="Desktop View" width="572" height="589" class="lazyload" data-proofer-ignore></a>
+<em>Raw Notes 2</em>
+<a href="/assets/img/tutorials/memprocfs-part1/raw notes 3.jpeg" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 572 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/raw notes 3.jpeg" alt="Desktop View" width="572" height="589" class="lazyload" data-proofer-ignore></a>
+<em>Raw Notes 3</em></p>
+
+<h2 id="part-0-aka-installation"><span class="me-2">Part 0: AKA Installation</span><a href="#part-0-aka-installation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>This was the trickiest part IMO especially if you are some casual like me who has NO IDEA what forensics tools are like.</p>
+
+<p>You will need an infected .vmem file, such as the cridex one in <a href="https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples">Volatility’s</a>.</p>
+
+<p>You will need to <a href="https://github.com/ufrisk/MemProcFS/releases"> download MemProcFS</a> off of their site along with <a href="https://github.com/dokan-dev/dokany/releases">installing Dokany .msi</a> if you’re doing this on a Windows host</p>
+
+<p>For me, I did this all on a Windows host.</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial1.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial1.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>Installing Dokany</em></p>
+
+<h2 id="part-1-running-memproc"><span class="me-2">Part 1: Running MemProc</span><a href="#part-1-running-memproc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial2.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial2.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>Running Memproc</em></p>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">.\MemProcFS.exe -device '[.VMEM SAMPLE]' -forensic 1
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial3.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial3.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>Using the .vmem John Hammond used in his walkthrough</em></p>
+
+<p>:M\ directory appearing</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>The image getting mounted</em></p>
+
+<h2 id="part-2-running-through"><span class="me-2">Part 2: Running Through</span><a href="#part-2-running-through" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>5:30 is the approximate timestamp for when this starts.</p>
+
+<p>Take a look at the directory, namely <strong>pid</strong>,  <strong>name</strong>, <strong>registry</strong>, <strong>sys</strong>.</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4-2.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4-2.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<h3 id="sys"><span class="me-2">sys</span><a href="#sys" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="proc"><span class="me-2">\proc</span><a href="#proc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Process hierarchy, textfile roughtly corresponding to a pstree output in Volatility</p>
+
+<p>note: explorer should not be the parent process for svchost.exe</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial5.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial5.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>examining proc</em></p>
+
+<h3 id="sys-1"><span class="me-2">sys</span><a href="#sys-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="net"><span class="me-2">\net</span><a href="#net" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Netstat output/netscan in volatility
+<a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial6.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial6.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<h3 id="registry"><span class="me-2">registry</span><a href="#registry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Similar to regedit</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial7.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial7.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<h4 id="runrunonce"><span class="me-2">Run\RunOnce</span><a href="#runrunonce" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>The Run/RunOnce registry keys make the program run once the user logs in</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial8.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial8.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">M:\registry\HKLM\Software\Microsoft\Windows\Current Version\Run</code></p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial9.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial9.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<h3 id="name"><span class="me-2">name</span><a href="#name" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial10.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial10.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<p>files -&gt; handles will tell you the files this process was interacting with 
+files -&gt; modules will tell you all the dlls with which the process was interacting
+files -&gt; vads (virtual address descriptor) is how windows keeps track with what process memory is allocated to a process</p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial11.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial11.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>handles</em></p>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial14.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial14.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<p>Check the M:\registry\hive_files  to tell you a list of the PID’s by name (dash the actual PID #)</p>
+
+<blockquote class="prompt-tip">
+  <p>Registry Hives: logical group of keys, subkeys, and values in the registry. Each time a new user logs on, a new hive gets created for that user with a separate file for the user</p>
+</blockquote>
+
+<h2 id="part-3-mforensic-folder"><span class="me-2">Part 3: M:/forensic Folder</span><a href="#part-3-mforensic-folder" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial15.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial15.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
+<em>folder directory</em></p>
+
+<p>Forensic &gt; Timeline is a list of processes in memory.</p>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="k">@import</span>
-  <span class="s2">"colors/light-typography"</span><span class="o">,</span>
-  <span class="s2">"colors/dark-typography"</span><span class="o">;</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="go">M:\forensic\timeline\timeline_registry
 
-<h2 id="mathematics"><span class="me-2">Mathematics</span><a href="#mathematics" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+M:\forensic\timeline\timeline_net
+</span></pre></td></tr></tbody></table></code></div></div>
 
-<p>The mathematics powered by <a href="https://www.mathjax.org/"><strong>MathJax</strong></a>:</p>
+<p>Registry paths and timestamps associated with them</p>
 
-\[\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}\]
-
-<p>When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are</p>
-
-\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}\]
-
-<h2 id="mermaid-svg"><span class="me-2">Mermaid SVG</span><a href="#mermaid-svg" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<pre><code class="language-mermaid"> gantt
-  title  Adding GANTT diagram functionality to mermaid
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
-</code></pre>
-
-<h2 id="images"><span class="me-2">Images</span><a href="#images" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="default-with-caption"><span class="me-2">Default (with caption)</span><a href="#default-with-caption" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><a href="/posts/20190808/mockup.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/posts/20190808/mockup.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
-<em>Full screen width and center alignment</em></p>
-
-<h3 id="left-aligned"><span class="me-2">Left aligned</span><a href="#left-aligned" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><a href="/posts/20190808/mockup.png" class="popup img-link w-75 normal shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/posts/20190808/mockup.png" alt="Desktop View" width="972" height="589"  class="lazyload" data-proofer-ignore></a></p>
-
-<h3 id="float-to-left"><span class="me-2">Float to left</span><a href="#float-to-left" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><a href="/posts/20190808/mockup.png" class="popup img-link w-50 left shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/posts/20190808/mockup.png" alt="Desktop View" width="972" height="589"  class="lazyload" data-proofer-ignore></a>
-Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.</p>
-
-<h3 id="float-to-right"><span class="me-2">Float to right</span><a href="#float-to-right" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p><a href="/posts/20190808/mockup.png" class="popup img-link w-50 right shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/posts/20190808/mockup.png" alt="Desktop View" width="972" height="589"  class="lazyload" data-proofer-ignore></a>
-Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.</p>
-
-<h3 id="darklight-mode--shadow"><span class="me-2">Dark/Light mode &amp; Shadow</span><a href="#darklight-mode--shadow" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>The image below will toggle dark/light mode based on theme preference, notice it has shadows.</p>
-
-<p><a href="/posts/20190808/devtools-light.png" class="popup img-link light w-75 shadow rounded-10 shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1212 668'%3E%3C/svg%3E" data-src="/posts/20190808/devtools-light.png" alt="light mode only"  width="1212" height="668" class="lazyload" data-proofer-ignore></a>
-<a href="/posts/20190808/devtools-dark.png" class="popup img-link dark w-75 shadow rounded-10 shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1212 668'%3E%3C/svg%3E" data-src="/posts/20190808/devtools-dark.png" alt="dark mode only"  width="1212" height="668" class="lazyload" data-proofer-ignore></a></p>
-
-<h2 id="video"><span class="me-2">Video</span><a href="#video" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/Balreaj8Yqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-<h2 id="reverse-footnote"><span class="me-2">Reverse Footnote</span><a href="#reverse-footnote" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:footnote" role="doc-endnote">
-      <p>The footnote source <a href="#fnref:footnote" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:fn-nth-2" role="doc-endnote">
-      <p>The 2nd footnote source <a href="#fnref:fn-nth-2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">forensic\findevil
+</span></pre></td></tr></tbody></table></code></div></div>
+<p>This may or may not have content since it’s only approximate</p>
 
 </div>
 
@@ -2037,6 +2716,16 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
           href="/tags/memprocfs/"
           class="post-tag no-text-decoration"
         >memprocfs</a>
+      
+        <a
+          href="/tags/annotations/"
+          class="post-tag no-text-decoration"
+        >annotations</a>
+      
+        <a
+          href="/tags/13cubed/"
+          class="post-tag no-text-decoration"
+        >13cubed</a>
       
     </div>
   
@@ -2212,231 +2901,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2506,10 +2970,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-      
-        
-        
-
   
     
     
@@ -2524,22 +2984,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2579,7 +3023,20 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2592,6 +3049,263 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2624,6 +3338,12 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
         <a class="post-tag btn btn-outline-primary" href="/tags/tech/">tech</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/13cubed/">13cubed</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/annotations/">annotations</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/bloodborne/">bloodborne</a>
       
         
@@ -2631,12 +3351,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/forensics/">forensics</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
       
     </div>
   </section>
@@ -2692,19 +3406,19 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2772,22 +3486,18 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
 
   
     <a
-      href="/posts/Bloodborne/"
+      href="/posts/volatility-part-1/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Bloodborne in Wonderland</p>
+      <p>Volatilty (Part 1)</p>
     </a>
   
 
   
-    <a
-      href="/posts/Elden-Ring/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>On The Nature of Tarnished Souls</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
@@ -2854,231 +3564,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3148,10 +3633,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-      
-        
-        
-
   
     
     
@@ -3166,22 +3647,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3221,7 +3686,20 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3234,6 +3712,263 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3266,6 +4001,12 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
         <a class="post-tag btn btn-outline-primary" href="/tags/tech/">tech</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/13cubed/">13cubed</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/annotations/">annotations</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/bloodborne/">bloodborne</a>
       
         
@@ -3273,12 +4014,6 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/forensics/">forensics</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/intro/">intro</a>
       
     </div>
   </section>

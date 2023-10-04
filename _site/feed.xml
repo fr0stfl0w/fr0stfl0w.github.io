@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2023-09-27T14:34:55+00:00</updated>
+  <updated>2023-10-04T00:27:38+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>MemProcFS (Part 1)</title>
+    <link href="http://localhost:4000/posts/memprocfs-part-1/" rel="alternate" type="text/html" title="MemProcFS (Part 1)" />
+    <published>2023-09-28T03:33:00+00:00</published>
+  
+    <updated>2023-09-28T03:33:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/memprocfs-part-1/</id>
+    <content src="http://localhost:4000/posts/memprocfs-part-1/" />
+    <author>
+      <name>erika</name>
+    </author>
+
+  
+    
+    <category term="tech" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are.
+
+TLDR SpeedRun
+
+Download the .zip off of the github releases AND the Dokany msi
+
+Unzip the file and then run the .exe from commandline/terminal/powershell
+
+MemProcFS.exe -device ..\memdump.vmem -forensic 1
+
+
+  You ne...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -48,6 +93,17 @@
 
       Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the repository up on Github and a .vmem file for collection.s
 
+Raw Notes
+
+
+Raw Notes 1
+
+Raw Notes 2
+
+Raw Notes 3
+
+Raw Notes 4
+
 Tutorials Used
 
 
@@ -62,9 +118,7 @@ Tutorials Used
     
   
   
-    
-      Memory Forensics Using the Volatility Framework
-      ...
+ ...
     </summary>
   
 
@@ -155,54 +209,6 @@ Installation
 
 Creating a New Site
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>MemProcFS (Part 1)</title>
-    <link href="http://localhost:4000/posts/memprocfs-part-1/" rel="alternate" type="text/html" title="MemProcFS (Part 1)" />
-    <published>2023-08-25T03:33:00+00:00</published>
-  
-    <updated>2023-08-25T03:33:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/memprocfs-part-1/</id>
-    <content src="http://localhost:4000/posts/memprocfs-part-1/" />
-    <author>
-      <name>erika</name>
-    </author>
-
-  
-    
-    <category term="tech" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
-
-Headings
-
-H1 - heading
-
-H2 - heading
-
-H3 - heading
-
-H4 - heading
-
-Paragraph
-
-Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilis...
     </summary>
   
 

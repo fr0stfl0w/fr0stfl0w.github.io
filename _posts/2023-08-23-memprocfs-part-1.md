@@ -17,33 +17,32 @@ image:
 Annotations and quick copy-pastes for MemprocFS, based on 13Cubed's tutorial. I don't see a whole lot of other people using this tool but it has been useful so I guess here we are. 
 
 ## TLDR SpeedRun
+### Commands
+```css
+> MemProcFS.exe -device memdump.vmem -forensic 1
 
-Download the .zip off of the [github releases](https://github.com/ufrisk/MemProcFS/releases) AND the [Dokany msi](https://github.com/dokan-dev/dokany/releases) 
+/sys/proc
+- pstree output
+/sys/net
+- netstat output
 
-Unzip the file and then run the .exe from commandline/terminal/powershell
+/registry/HKLM/SYSTEM/ControlSet001/Control/ComputerName 
+/registry/HKLM/Software/Microsoft/Windows/Current Version/Run
+/registry/hive_files
+- list of the PIDs by name (dash the actual PID#)
 
-```console
-MemProcFS.exe -device ..\memdump.vmem -forensic 1
+/name/(randomprocess)
+/name/(randomprocess)/files/handles 
+    - what files was this process interacting with 
+/name/(randomprocess)/files/modules
+    - what dlls was this process interacting with
+/name/(randomprocess)/files/vads
+    - how Windows keeps track of what process memory is allocated to a process
+
+/pid
+
 ```
-> You need to find this file, it should be in the directory you downloaded and unzipped.
-{: .prompt-tip }
 
-```console
-MemProcFS.exe -device [the .vmem image to examine] -forensic 
-
-- forensic Starts a forensic scan of the physical memory
-
-MemProc will tkae a bit for the /forensics folder to show up but it will contain info regarding things like timelines of processes and dlls loaded
-
-```
-> "... directories and files related to the MemProcFS forensic sub-system. The forensic sub-system is a collection of more thorough batch-oriented analysis tasks that may be undertaken on memory dumps." 
-
-[https://github.com/ufrisk/MemProcFS/wiki/FS_Forensic](MemprocFS Wiki)
-
-> Take Note: that .vmem file is that same cridex.vmem sample we used with Volatility. 
-{: .prompt-tip }
-
-When you run this it will seem like nothing is happening, and you can for now ignore the python warning. But if you look at your Windows directory, you will see the :\M image loaded for you to browse through like a file directory.
 
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/raw notes 1.jpeg){: width="500" height="589" }
 _Raw Notes 1_
@@ -65,14 +64,36 @@ For me, I did this all on a Windows host.
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial1.png){: width="972" height="589" }
 _Installing Dokany_
 
+Download the .zip off of the [github releases](https://github.com/ufrisk/MemProcFS/releases) AND the [Dokany msi](https://github.com/dokan-dev/dokany/releases) 
+
+Unzip the file and then run the .exe from commandline/terminal/powershell
+
+
+> "...equating to the directories and files related to the MemProcFS forensic sub-system. The forensic sub-system is a collection of more thorough batch-oriented analysis tasks that may be undertaken on memory dumps." 
+
+[https://github.com/ufrisk/MemProcFS/wiki/FS_Forensic](MemprocFS Wiki)
+
+> Take Note: that .vmem file is that same cridex.vmem sample we used with Volatility. 
+{: .prompt-tip }
+
+
 
 ## Part 1: Running MemProc
 
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial2.png){: width="972" height="589" }
 _Running Memproc_
-```console
+```css
 .\MemProcFS.exe -device '[.VMEM SAMPLE]' -forensic 1
 ```
+> -forensic Starts a forensic scan of the physical memory
+
+> -device [the .vmem image to examine]
+
+> MemProc will take a bit for the /forensics folder to show up but it will contain info regarding things like timelines of processes and dlls loaded. 
+{: .prompt-tip }
+
+When you run this it will seem like nothing is happening, and you can for now ignore the python warning. But if you look at your Windows directory, you will see the :\M image loaded for you to browse through like a file directory.
+
 
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial3.png){: width="972" height="589" }
 _Using the .vmem John Hammond used in his walkthrough_
@@ -88,14 +109,19 @@ _The image getting mounted_
 
 5:30 is the approximate timestamp for when this starts.
 
-Take a look at the directory, namely **pid**,  **name**, **registry**, **sys**. 
+Relevant directories: 
+```css
+/sys
+/registry
+/name
+/pid
+```
 
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4-2.png){: width="972" height="589" }
 _folder directory_
 
-### sys
-#### \proc
-
+### \sys\ Folder
+#### \sys\proc
 Process hierarchy, textfile roughtly corresponding to a pstree output in Volatility
 
 note: explorer should not be the parent process for svchost.exe
@@ -103,21 +129,21 @@ note: explorer should not be the parent process for svchost.exe
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial5.png){: width="972" height="589" }
 _examining proc_
 
-### sys
-#### \net 
+#### \sys\net 
 
 Netstat output/netscan in volatility
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial6.png){: width="972" height="589" }
 _folder directory_
 
-### registry
+
+### \registry\ Folder
 
 Similar to regedit
 
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial7.png){: width="972" height="589" }
 _folder directory_
 
-#### Run\RunOnce 
+#### \registry\...\Run\RunOnce 
 
 The Run/RunOnce registry keys make the program run once the user logs in
 
@@ -129,14 +155,23 @@ _folder directory_
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial9.png){: width="972" height="589" }
 _folder directory_
 
-### name 
+```M:\registry\hive_files```
+
+list of the PID's by name (dash the actual PID #)
+
+> Registry Hives: logical group of keys, subkeys, and values in the registry. Each time a new user logs on, a new hive gets created for that user with a separate file for the user
+{: .prompt-tip } 
+
+### \name\ Folder 
 
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial10.png){: width="972" height="589" }
 _folder directory_
 
-files -> handles will tell you the files this process was interacting with 
-files -> modules will tell you all the dlls with which the process was interacting
-files -> vads (virtual address descriptor) is how windows keeps track with what process memory is allocated to a process 
+/files/handles will tell you the files this process was interacting with 
+
+/files/modules will tell you all the dlls with which the process was interacting
+
+/files/vads (virtual address descriptor) is how windows keeps track with what process memory is allocated to a process 
 
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial11.png){: width="972" height="589" }
 _handles_
@@ -144,10 +179,6 @@ _handles_
 ![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial14.png){: width="972" height="589" }
 _folder directory_
 
-Check the M:\registry\hive_files  to tell you a list of the PID's by name (dash the actual PID #)
-
-> Registry Hives: logical group of keys, subkeys, and values in the registry. Each time a new user logs on, a new hive gets created for that user with a separate file for the user
-{: .prompt-tip } 
 
 ## Part 3: M:/forensic Folder
 
@@ -161,10 +192,9 @@ M:\forensic\timeline\timeline_registry
 M:\forensic\timeline\timeline_net
 ```
 
-
 Registry paths and timestamps associated with them
 
 ```console
 forensic\findevil
 ```
-This may or may not have content since it's only approximate
+Remember, this forensic folder may or may not be 

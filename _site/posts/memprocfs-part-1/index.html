@@ -18,6 +18,8 @@
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" 
   
+    data-mode="dark"
+  
 >
   <!-- The Head -->
 
@@ -56,21 +58,21 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are." />
 <meta property="og:description" content="Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are." />
-<link rel="canonical" href="http://localhost:4000/posts/memprocfs-part-1/" />
-<meta property="og:url" content="http://localhost:4000/posts/memprocfs-part-1/" />
+<link rel="canonical" href="http://localhost:4001/posts/memprocfs-part-1/" />
+<meta property="og:url" content="http://localhost:4001/posts/memprocfs-part-1/" />
 <meta property="og:site_name" content="Scavengers’ Repo" />
-<meta property="og:image" content="http://localhost:4000/assets/img/banner-crow.jpg" />
+<meta property="og:image" content="http://localhost:4001/assets/img/banner-crow.jpg" />
 <meta property="og:image:alt" content="Responsive rendering of Chirpy theme on multiple devices." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-09-28T03:33:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/assets/img/banner-crow.jpg" />
+<meta property="twitter:image" content="http://localhost:4001/assets/img/banner-crow.jpg" />
 <meta name="twitter:image:alt" content="Responsive rendering of Chirpy theme on multiple devices." />
 <meta property="twitter:title" content="MemProcFS (Part 1)" />
 <meta name="twitter:site" content="@technomancer_01" />
 <meta name="twitter:creator" content="@technomancer_01" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-09-28T03:33:00+00:00","datePublished":"2023-09-28T03:33:00+00:00","description":"Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are.","headline":"MemProcFS (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Responsive rendering of Chirpy theme on multiple devices.","url":"http://localhost:4000/assets/img/banner-crow.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/memprocfs-part-1/"},"url":"http://localhost:4000/posts/memprocfs-part-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2023-10-04T00:28:22+00:00","datePublished":"2023-09-28T03:33:00+00:00","description":"Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are.","headline":"MemProcFS (Part 1)","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Responsive rendering of Chirpy theme on multiple devices.","url":"http://localhost:4001/assets/img/banner-crow.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4001/posts/memprocfs-part-1/"},"url":"http://localhost:4001/posts/memprocfs-part-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -138,151 +140,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -304,7 +161,7 @@
     <h1 class="site-title">
       <a href="/">Scavengers' Repo</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">A repository for other cluttered minds, documentation for various tutorials and resources</p>
+    <p class="site-subtitle  mb-0">A repo for cluttered minds, docs, & archive retrieval.</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -363,14 +220,6 @@
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
     
 
     
@@ -470,7 +319,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['archives','technomancer-01.com'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['technomancer-01','protonmail.com'].join('@')"
           aria-label="email"
           
 
@@ -1858,354 +1707,6 @@
     
 
   
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-
-    
-
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
-    
-      
-        <!-- add SVG placehoder -->
-        
-      
-    
-
-    <!-- Bypass the HTML-proofer test -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-      
-    
-
-    <!-- combine -->
-    
-
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-
-    
-
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
-    
-      
-        <!-- add SVG placehoder -->
-        
-      
-    
-
-    <!-- Bypass the HTML-proofer test -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-      
-    
-
-    <!-- combine -->
-    
-
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-
-    
-
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
-    
-      
-        <!-- add SVG placehoder -->
-        
-      
-    
-
-    <!-- Bypass the HTML-proofer test -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-      
-    
-
-    <!-- combine -->
-    
-
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-
-    
-
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
-    
-      
-        <!-- add SVG placehoder -->
-        
-      
-    
-
-    <!-- Bypass the HTML-proofer test -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-      
-    
-
-    <!-- combine -->
-    
-
-  
 
   
 
@@ -2280,18 +1781,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -2308,18 +1797,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
       
 
       
@@ -2456,6 +1933,29 @@
 
     <!-- lastmod date -->
     
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1696379302"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Oct  3, 2023
+</time>
+
+      </span>
+    
 
     
       
@@ -2506,7 +2006,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="563 words"
+  title="635 words"
 >
   <em>3 min</em> read</span>
 
@@ -2520,46 +2020,54 @@
   <p>Annotations and quick copy-pastes for MemprocFS, based on 13Cubed’s tutorial. I don’t see a whole lot of other people using this tool but it has been useful so I guess here we are.</p>
 
 <h2 id="tldr-speedrun"><span class="me-2">TLDR SpeedRun</span><a href="#tldr-speedrun" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>Download the .zip off of the <a href="https://github.com/ufrisk/MemProcFS/releases">github releases</a> AND the <a href="https://github.com/dokan-dev/dokany/releases">Dokany msi</a></p>
-
-<p>Unzip the file and then run the .exe from commandline/terminal/powershell</p>
-
-<div class="language-console highlighter-rouge"><div class="code-header">
-        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="go">MemProcFS.exe -device ..\memdump.vmem -forensic 1
-</span></pre></td></tr></tbody></table></code></div></div>
-<blockquote class="prompt-tip">
-  <p>You need to find this file, it should be in the directory you downloaded and unzipped.</p>
-</blockquote>
-
-<div class="language-console highlighter-rouge"><div class="code-header">
-        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="commands"><span class="me-2">Commands</span><a href="#commands" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-css highlighter-rouge"><div class="code-header">
+        <span data-label-text="CSS"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="go">MemProcFS.exe -device [the .vmem image to examine] -forensic 
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;</span> <span class="nt">MemProcFS</span><span class="nc">.exe</span> <span class="nt">-device</span> <span class="nt">memdump</span><span class="nc">.vmem</span> <span class="nt">-forensic</span> <span class="err">1</span>
 
-- forensic Starts a forensic scan of the physical memory
+<span class="o">/</span><span class="nt">sys</span><span class="o">/</span><span class="nt">proc</span>
+<span class="nt">-</span> <span class="nt">pstree</span> <span class="nt">output</span>
+<span class="o">/</span><span class="nt">sys</span><span class="o">/</span><span class="nt">net</span>
+<span class="nt">-</span> <span class="nt">netstat</span> <span class="nt">output</span>
 
-MemProc will tkae a bit for the /forensics folder to show up but it will contain info regarding things like timelines of processes and dlls loaded
+<span class="o">/</span><span class="nt">registry</span><span class="o">/</span><span class="nt">HKLM</span><span class="o">/</span><span class="nt">SYSTEM</span><span class="o">/</span><span class="nt">ControlSet001</span><span class="o">/</span><span class="nt">Control</span><span class="o">/</span><span class="nt">ComputerName</span> 
+<span class="o">/</span><span class="nt">registry</span><span class="o">/</span><span class="nt">HKLM</span><span class="o">/</span><span class="nt">Software</span><span class="o">/</span><span class="nt">Microsoft</span><span class="o">/</span><span class="nt">Windows</span><span class="o">/</span><span class="nt">Current</span> <span class="nt">Version</span><span class="o">/</span><span class="nt">Run</span>
+<span class="o">/</span><span class="nt">registry</span><span class="o">/</span><span class="nt">hive_files</span>
+<span class="nt">-</span> <span class="nt">list</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">PIDs</span> <span class="nt">by</span> <span class="nt">name</span> <span class="o">(</span><span class="nt">dash</span> <span class="nt">the</span> <span class="nt">actual</span> <span class="nt">PID</span><span class="err">#</span><span class="o">)</span>
 
-</span></pre></td></tr></tbody></table></code></div></div>
-<blockquote>
-  <p>“… directories and files related to the MemProcFS forensic sub-system. The forensic sub-system is a collection of more thorough batch-oriented analysis tasks that may be undertaken on memory dumps.”</p>
-</blockquote>
+<span class="o">/</span><span class="nt">name</span><span class="o">/(</span><span class="nt">randomprocess</span><span class="o">)</span>
+<span class="o">/</span><span class="nt">name</span><span class="o">/(</span><span class="nt">randomprocess</span><span class="o">)/</span><span class="nt">files</span><span class="o">/</span><span class="nt">handles</span> 
+    <span class="nt">-</span> <span class="nt">what</span> <span class="nt">files</span> <span class="nt">was</span> <span class="nt">this</span> <span class="nt">process</span> <span class="nt">interacting</span> <span class="nt">with</span> 
+<span class="o">/</span><span class="nt">name</span><span class="o">/(</span><span class="nt">randomprocess</span><span class="o">)/</span><span class="nt">files</span><span class="o">/</span><span class="nt">modules</span>
+    <span class="nt">-</span> <span class="nt">what</span> <span class="nt">dlls</span> <span class="nt">was</span> <span class="nt">this</span> <span class="nt">process</span> <span class="nt">interacting</span> <span class="nt">with</span>
+<span class="o">/</span><span class="nt">name</span><span class="o">/(</span><span class="nt">randomprocess</span><span class="o">)/</span><span class="nt">files</span><span class="o">/</span><span class="nt">vads</span>
+    <span class="nt">-</span> <span class="nt">how</span> <span class="nt">Windows</span> <span class="nt">keeps</span> <span class="nt">track</span> <span class="nt">of</span> <span class="nt">what</span> <span class="nt">process</span> <span class="nt">memory</span> <span class="nt">is</span> <span class="nt">allocated</span> <span class="nt">to</span> <span class="nt">a</span> <span class="nt">process</span>
 
-<p><a href="MemprocFS Wiki">https://github.com/ufrisk/MemProcFS/wiki/FS_Forensic</a></p>
+<span class="o">/</span><span class="nt">pid</span>
 
-<blockquote class="prompt-tip">
-  <p>Take Note: that .vmem file is that same cridex.vmem sample we used with Volatility.</p>
-</blockquote>
-
-<p>When you run this it will seem like nothing is happening, and you can for now ignore the python warning. But if you look at your Windows directory, you will see the :\M image loaded for you to browse through like a file directory.</p>
+</pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/tutorials/memprocfs-part1/raw notes 1.jpeg" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/raw notes 1.jpeg" alt="Desktop View" width="500" height="589" class="lazyload" data-proofer-ignore></a>
 <em>Raw Notes 1</em>
@@ -2581,15 +2089,42 @@ MemProc will tkae a bit for the /forensics folder to show up but it will contain
 <p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial1.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial1.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>Installing Dokany</em></p>
 
+<p>Download the .zip off of the <a href="https://github.com/ufrisk/MemProcFS/releases">github releases</a> AND the <a href="https://github.com/dokan-dev/dokany/releases">Dokany msi</a></p>
+
+<p>Unzip the file and then run the .exe from commandline/terminal/powershell</p>
+
+<blockquote>
+  <p>“…equating to the directories and files related to the MemProcFS forensic sub-system. The forensic sub-system is a collection of more thorough batch-oriented analysis tasks that may be undertaken on memory dumps.”</p>
+</blockquote>
+
+<p><a href="MemprocFS Wiki">https://github.com/ufrisk/MemProcFS/wiki/FS_Forensic</a></p>
+
+<blockquote class="prompt-tip">
+  <p>Take Note: that .vmem file is that same cridex.vmem sample we used with Volatility.</p>
+</blockquote>
+
 <h2 id="part-1-running-memproc"><span class="me-2">Part 1: Running MemProc</span><a href="#part-1-running-memproc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial2.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial2.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>Running Memproc</em></p>
-<div class="language-console highlighter-rouge"><div class="code-header">
-        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-css highlighter-rouge"><div class="code-header">
+        <span data-label-text="CSS"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="go">.\MemProcFS.exe -device '[.VMEM SAMPLE]' -forensic 1
-</span></pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="o">.</span><span class="err">\</span><span class="nt">MemProcFS</span><span class="nc">.exe</span> <span class="nt">-device</span> <span class="s2">'[.VMEM SAMPLE]'</span> <span class="nt">-forensic</span> <span class="err">1</span>
+</pre></td></tr></tbody></table></code></div></div>
+<blockquote>
+  <p>-forensic Starts a forensic scan of the physical memory</p>
+</blockquote>
+
+<blockquote>
+  <p>-device [the .vmem image to examine]</p>
+</blockquote>
+
+<blockquote class="prompt-tip">
+  <p>MemProc will take a bit for the /forensics folder to show up but it will contain info regarding things like timelines of processes and dlls loaded.</p>
+</blockquote>
+
+<p>When you run this it will seem like nothing is happening, and you can for now ignore the python warning. But if you look at your Windows directory, you will see the :\M image loaded for you to browse through like a file directory.</p>
 
 <p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial3.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial3.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>Using the .vmem John Hammond used in his walkthrough</em></p>
@@ -2603,14 +2138,24 @@ MemProc will tkae a bit for the /forensics folder to show up but it will contain
 
 <p>5:30 is the approximate timestamp for when this starts.</p>
 
-<p>Take a look at the directory, namely <strong>pid</strong>,  <strong>name</strong>, <strong>registry</strong>, <strong>sys</strong>.</p>
+<p>Relevant directories:</p>
+<div class="language-css highlighter-rouge"><div class="code-header">
+        <span data-label-text="CSS"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="o">/</span><span class="nt">sys</span>
+<span class="o">/</span><span class="nt">registry</span>
+<span class="o">/</span><span class="nt">name</span>
+<span class="o">/</span><span class="nt">pid</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4-2.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial4-2.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>folder directory</em></p>
 
-<h3 id="sys"><span class="me-2">sys</span><a href="#sys" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<h4 id="proc"><span class="me-2">\proc</span><a href="#proc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
+<h3 id="sys-folder"><span class="me-2">\sys\ Folder</span><a href="#sys-folder" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="sysproc"><span class="me-2">\sys\proc</span><a href="#sysproc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>Process hierarchy, textfile roughtly corresponding to a pstree output in Volatility</p>
 
 <p>note: explorer should not be the parent process for svchost.exe</p>
@@ -2618,21 +2163,20 @@ MemProc will tkae a bit for the /forensics folder to show up but it will contain
 <p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial5.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial5.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>examining proc</em></p>
 
-<h3 id="sys-1"><span class="me-2">sys</span><a href="#sys-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<h4 id="net"><span class="me-2">\net</span><a href="#net" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="sysnet"><span class="me-2">\sys\net</span><a href="#sysnet" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>Netstat output/netscan in volatility
 <a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial6.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial6.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>folder directory</em></p>
 
-<h3 id="registry"><span class="me-2">registry</span><a href="#registry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="registry-folder"><span class="me-2">\registry\ Folder</span><a href="#registry-folder" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Similar to regedit</p>
 
 <p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial7.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial7.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>folder directory</em></p>
 
-<h4 id="runrunonce"><span class="me-2">Run\RunOnce</span><a href="#runrunonce" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="registryrunrunonce"><span class="me-2">\registry...\Run\RunOnce</span><a href="#registryrunrunonce" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>The Run/RunOnce registry keys make the program run once the user logs in</p>
 
@@ -2644,42 +2188,41 @@ MemProc will tkae a bit for the /forensics folder to show up but it will contain
 <p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial9.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial9.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
 <em>folder directory</em></p>
 
-<h3 id="name"><span class="me-2">name</span><a href="#name" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<pre><code class="language-M:\registry\hive_files```">
+list of the PID's by name (dash the actual PID #)
 
-<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial10.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial10.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
-<em>folder directory</em></p>
+&gt; Registry Hives: logical group of keys, subkeys, and values in the registry. Each time a new user logs on, a new hive gets created for that user with a separate file for the user
+{: .prompt-tip } 
 
-<p>files -&gt; handles will tell you the files this process was interacting with 
-files -&gt; modules will tell you all the dlls with which the process was interacting
-files -&gt; vads (virtual address descriptor) is how windows keeps track with what process memory is allocated to a process</p>
+### \name\ Folder 
 
-<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial11.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial11.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
-<em>handles</em></p>
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial10.png){: width="972" height="589" }
+_folder directory_
 
-<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial14.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial14.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
-<em>folder directory</em></p>
+/files/handles will tell you the files this process was interacting with 
 
-<p>Check the M:\registry\hive_files  to tell you a list of the PID’s by name (dash the actual PID #)</p>
+/files/modules will tell you all the dlls with which the process was interacting
 
-<blockquote class="prompt-tip">
-  <p>Registry Hives: logical group of keys, subkeys, and values in the registry. Each time a new user logs on, a new hive gets created for that user with a separate file for the user</p>
-</blockquote>
+/files/vads (virtual address descriptor) is how windows keeps track with what process memory is allocated to a process 
 
-<h2 id="part-3-mforensic-folder"><span class="me-2">Part 3: M:/forensic Folder</span><a href="#part-3-mforensic-folder" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial11.png){: width="972" height="589" }
+_handles_
 
-<p><a href="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial15.png" class="popup img-link  shimmer"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 972 589'%3E%3C/svg%3E" data-src="/assets/img/tutorials/memprocfs-part1/memprocfs tutorial15.png" alt="Desktop View" width="972" height="589" class="lazyload" data-proofer-ignore></a>
-<em>folder directory</em></p>
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial14.png){: width="972" height="589" }
+_folder directory_
 
-<p>Forensic &gt; Timeline is a list of processes in memory.</p>
-<div class="language-console highlighter-rouge"><div class="code-header">
-        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="go">M:\forensic\timeline\timeline_registry
+
+## Part 3: M:/forensic Folder
+
+![Desktop View](/assets/img/tutorials/memprocfs-part1/memprocfs tutorial15.png){: width="972" height="589" }
+_folder directory_
+
+Forensic &gt; Timeline is a list of processes in memory.
+```console
+M:\forensic\timeline\timeline_registry
 
 M:\forensic\timeline\timeline_net
-</span></pre></td></tr></tbody></table></code></div></div>
+</code></pre>
 
 <p>Registry paths and timestamps associated with them</p>
 
@@ -2688,7 +2231,7 @@ M:\forensic\timeline\timeline_net
       <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="go">forensic\findevil
 </span></pre></td></tr></tbody></table></code></div></div>
-<p>This may or may not have content since it’s only approximate</p>
+<p>Remember, this forensic folder may or may not be</p>
 
 </div>
 
@@ -2760,7 +2303,7 @@ M:\forensic\timeline\timeline_net
     
       
       <a
-        href="https://twitter.com/intent/tweet?text=MemProcFS%20(Part%201)%20-%20Scavengers'%20Repo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fmemprocfs-part-1%2F"
+        href="https://twitter.com/intent/tweet?text=MemProcFS%20(Part%201)%20-%20Scavengers'%20Repo&url=http%3A%2F%2Flocalhost%3A4001%2Fposts%2Fmemprocfs-part-1%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -2773,7 +2316,7 @@ M:\forensic\timeline\timeline_net
     
       
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=MemProcFS%20(Part%201)%20-%20Scavengers'%20Repo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fmemprocfs-part-1%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=MemProcFS%20(Part%201)%20-%20Scavengers'%20Repo&u=http%3A%2F%2Flocalhost%3A4001%2Fposts%2Fmemprocfs-part-1%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -2786,7 +2329,7 @@ M:\forensic\timeline\timeline_net
     
       
       <a
-        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fmemprocfs-part-1%2F&text=MemProcFS%20(Part%201)%20-%20Scavengers'%20Repo"
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4001%2Fposts%2Fmemprocfs-part-1%2F&text=MemProcFS%20(Part%201)%20-%20Scavengers'%20Repo"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -2851,21 +2394,7 @@ M:\forensic\timeline\timeline_net
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/volatility-part-1/">Volatilty (Part 1)</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Elden-Ring/">On The Nature of Tarnished Souls</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/intro-to-this-site/">How To Use This Site</a>
+          <a href="/posts/memprocfs-part-1/">MemProcFS (Part 1)</a>
         </li>
       
         
@@ -2911,6 +2440,328 @@ M:\forensic\timeline\timeline_net
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2990,81 +2841,6 @@ M:\forensic\timeline\timeline_net
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3128,28 +2904,6 @@ M:\forensic\timeline\timeline_net
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3167,48 +2921,35 @@ M:\forensic\timeline\timeline_net
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
     
   
     
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
     
   
     
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3235,71 +2976,9 @@ M:\forensic\timeline\timeline_net
     
     
       
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3323,6 +3002,18 @@ M:\forensic\timeline\timeline_net
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/tech/">tech</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/ctf/">ctf</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pentesting/">pentesting</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/red-team/">red team</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/arcane-ink/">arcane ink</a>
       
         
@@ -3335,22 +3026,10 @@ M:\forensic\timeline\timeline_net
         <a class="post-tag btn btn-outline-primary" href="/tags/soulsborne/">soulsborne</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tech/">tech</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/13cubed/">13cubed</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/annotations/">annotations</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/bloodborne/">bloodborne</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/documentation/">documentation</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
       
     </div>
   </section>
@@ -3406,7 +3085,79 @@ M:\forensic\timeline\timeline_net
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -3434,6 +3185,51 @@ M:\forensic\timeline\timeline_net
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/EDR-Velociraptor/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="small"
+  
+  data-ts="1645966500"
+  data-df="ll"
+  
+>
+  Feb 27, 2022
+</time>
+
+              <h4 class="pt-0 my-2">EDR Velociraptor</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  Video Demo
+https://www.youtube.com/watch?v=2kgC9Ushk9g&amp;amp;ab_channel=TaylorWalton
+
+Velociraptor Release Link
+https://github.com/velocidex/velociraptor/releases/
+
+Surprisingly Simple Documentation
+...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/volatility-part-1/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -3455,7 +3251,7 @@ M:\forensic\timeline\timeline_net
   Sep 26, 2023
 </time>
 
-              <h4 class="pt-0 my-2">Volatilty (Part 1)</h4>
+              <h4 class="pt-0 my-2">Volatilty</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -3465,6 +3261,64 @@ M:\forensic\timeline\timeline_net
 
 
                   Annotations of various tutorials on starting out in Volatility, a python-based tool for Host-Based Forensics and Incident Responders. This tool is for digital investigation, and requires the reposi...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/docker/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="small"
+  
+  data-ts="1707742500"
+  data-df="ll"
+  
+>
+  Feb 12, 2024
+</time>
+
+              <h4 class="pt-0 my-2">Docker Cheatsheet</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  Raw Notes
+
+
+Raw Notes 1
+
+Raw Notes 2
+
+Raw Notes 3
+
+Raw Notes 4
+
+Tutorials Used
+
+https://github.com/weslambert/velociraptor-docker
+Ironcailly this had nothing to do with docker initially
+
+
+
+Setup
+
+E...
                 </p>
               </div>
             </div>
@@ -3490,14 +3344,18 @@ M:\forensic\timeline\timeline_net
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Volatilty (Part 1)</p>
+      <p>Volatilty</p>
     </a>
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/docker/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Docker Cheatsheet</p>
+    </a>
   
 </nav>
 
@@ -3520,7 +3378,7 @@ M:\forensic\timeline\timeline_net
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://twitter.com/technomancer_01">Erika</a>.
     
       <span
@@ -3574,6 +3432,328 @@ M:\forensic\timeline\timeline_net
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3653,81 +3833,6 @@ M:\forensic\timeline\timeline_net
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3791,28 +3896,6 @@ M:\forensic\timeline\timeline_net
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3830,48 +3913,35 @@ M:\forensic\timeline\timeline_net
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
     
   
     
     
     
     
-      
-        
-        
-
   
     
     
     
-    
-      
     
   
     
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3898,71 +3968,9 @@ M:\forensic\timeline\timeline_net
     
     
       
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3986,6 +3994,18 @@ M:\forensic\timeline\timeline_net
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/tech/">tech</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/ctf/">ctf</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/pentesting/">pentesting</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/red-team/">red team</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/arcane-ink/">arcane ink</a>
       
         
@@ -3998,22 +4018,10 @@ M:\forensic\timeline\timeline_net
         <a class="post-tag btn btn-outline-primary" href="/tags/soulsborne/">soulsborne</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tech/">tech</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/13cubed/">13cubed</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/annotations/">annotations</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/bloodborne/">bloodborne</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/documentation/">documentation</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/elden-ring/">elden ring</a>
       
     </div>
   </section>

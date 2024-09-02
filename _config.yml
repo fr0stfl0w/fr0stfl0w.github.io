@@ -20,7 +20,7 @@ timezone: utc
 
 title: Scavengers' Repo # the main title
 
-tagline: A repository for other cluttered minds, documentation for various tutorials and resources # it will display as the sub-title
+tagline: "A repo for cluttered minds, docs, & archive retrieval."  # it will display as the sub-title
 
 description: A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too. 
 
@@ -37,7 +37,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Erika
-  email: archives@technomancer-01.com # change to your email address
+  email: technomancer-01@protonmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/technomancer_01 # change to your twitter homepage
@@ -65,7 +65,8 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 ## [light|dark]
-# theme_mode: dark
+
+theme_mode: dark
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url

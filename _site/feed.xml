@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4001/</id>
+  <id>http://localhost:4000/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2024-09-02T19:18:33+00:00</updated>
+  <updated>2024-09-03T18:11:16+00:00</updated>
   <author>
     <name>Erika</name>
-    <uri>http://localhost:4001/</uri>
+    <uri>http://localhost:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4001/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://localhost:4001/"/>
+    href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
   <rights> © 2024 Erika </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Namespace Notes</title>
-    <link href="http://localhost:4001/posts/namespace-notes/" rel="alternate" type="text/html" title="Namespace Notes" />
+    <link href="http://localhost:4000/posts/namespace-notes/" rel="alternate" type="text/html" title="Namespace Notes" />
     <published>2024-08-14T12:55:00+00:00</published>
   
     <updated>2024-08-14T12:55:00+00:00</updated>
   
-    <id>http://localhost:4001/posts/namespace-notes/</id>
-    <content src="http://localhost:4001/posts/namespace-notes/" />
+    <id>http://localhost:4000/posts/namespace-notes/</id>
+    <content src="http://localhost:4000/posts/namespace-notes/" />
     <author>
       <name>erika</name>
     </author>
@@ -79,13 +79,13 @@ Hypertext...
   
   <entry>
     <title>Active Directory</title>
-    <link href="http://localhost:4001/posts/active-directory/" rel="alternate" type="text/html" title="Active Directory" />
+    <link href="http://localhost:4000/posts/active-directory/" rel="alternate" type="text/html" title="Active Directory" />
     <published>2024-03-02T12:55:00+00:00</published>
   
     <updated>2024-03-02T12:55:00+00:00</updated>
   
-    <id>http://localhost:4001/posts/active-directory/</id>
-    <content src="http://localhost:4001/posts/active-directory/" />
+    <id>http://localhost:4000/posts/active-directory/</id>
+    <content src="http://localhost:4000/posts/active-directory/" />
     <author>
       <name>erika</name>
     </author>
@@ -126,13 +126,13 @@ https://www.youtube.com/watch?v=-TsqAHUWdQU&amp;amp;ab_channel=MSFTWebCast
   
   <entry>
     <title>Splunk</title>
-    <link href="http://localhost:4001/posts/splunk/" rel="alternate" type="text/html" title="Splunk" />
+    <link href="http://localhost:4000/posts/splunk/" rel="alternate" type="text/html" title="Splunk" />
     <published>2024-02-14T12:55:00+00:00</published>
   
     <updated>2024-02-14T12:55:00+00:00</updated>
   
-    <id>http://localhost:4001/posts/splunk/</id>
-    <content src="http://localhost:4001/posts/splunk/" />
+    <id>http://localhost:4000/posts/splunk/</id>
+    <content src="http://localhost:4000/posts/splunk/" />
     <author>
       <name>erika</name>
     </author>
@@ -180,13 +180,13 @@ https://www.youtube.com/watch?v=-TsqAHUWdQU&amp;amp;ab_channel=MSFTWebCast
   
   <entry>
     <title>Base CTF Recipe</title>
-    <link href="http://localhost:4001/posts/ctfs/" rel="alternate" type="text/html" title="Base CTF Recipe" />
+    <link href="http://localhost:4000/posts/ctfs/" rel="alternate" type="text/html" title="Base CTF Recipe" />
     <published>2024-02-14T12:55:00+00:00</published>
   
     <updated>2024-02-14T12:55:00+00:00</updated>
   
-    <id>http://localhost:4001/posts/ctfs/</id>
-    <content src="http://localhost:4001/posts/ctfs/" />
+    <id>http://localhost:4000/posts/ctfs/</id>
+    <content src="http://localhost:4000/posts/ctfs/" />
     <author>
       <name>erika</name>
     </author>
@@ -254,13 +254,13 @@ reveals more about the web application such as the version
   
   <entry>
     <title>Docker Cheatsheet</title>
-    <link href="http://localhost:4001/posts/docker/" rel="alternate" type="text/html" title="Docker Cheatsheet" />
+    <link href="http://localhost:4000/posts/docker/" rel="alternate" type="text/html" title="Docker Cheatsheet" />
     <published>2024-02-12T12:55:00+00:00</published>
   
-    <updated>2024-02-12T12:55:00+00:00</updated>
+    <updated>2024-09-02T22:15:06+00:00</updated>
   
-    <id>http://localhost:4001/posts/docker/</id>
-    <content src="http://localhost:4001/posts/docker/" />
+    <id>http://localhost:4000/posts/docker/</id>
+    <content src="http://localhost:4000/posts/docker/" />
     <author>
       <name>erika</name>
     </author>

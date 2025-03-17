@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2024-09-03T18:11:16+00:00</updated>
+  <updated>2025-03-17T20:19:01+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:4000/</uri>
@@ -13,10 +13,52 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2024 Erika </rights>
+  <rights> © 2025 Erika </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>HAM Radio Notes</title>
+    <link href="http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/" rel="alternate" type="text/html" title="HAM Radio Notes" />
+    <published>2025-03-17T12:55:00+00:00</published>
+  
+    <updated>2025-03-17T12:55:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/</id>
+    <content src="http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/" />
+    <author>
+      <name>erika</name>
+    </author>
+
+  
+    
+    <category term="amateur radio" />
+    
+    <category term="radio" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Baofeng Menu Reference
+
+CHIRP
+
+Working Model
+
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -246,70 +288,6 @@ reveals more about the web application such as the version
 
 
   dirbuster [we...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Docker Cheatsheet</title>
-    <link href="http://localhost:4000/posts/docker/" rel="alternate" type="text/html" title="Docker Cheatsheet" />
-    <published>2024-02-12T12:55:00+00:00</published>
-  
-    <updated>2024-09-02T22:15:06+00:00</updated>
-  
-    <id>http://localhost:4000/posts/docker/</id>
-    <content src="http://localhost:4000/posts/docker/" />
-    <author>
-      <name>erika</name>
-    </author>
-
-  
-    
-    <category term="tech" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Raw Notes
-
-
-Raw Notes 1
-
-Raw Notes 2
-
-Raw Notes 3
-
-Raw Notes 4
-
-Tutorials Used
-
-https://github.com/weslambert/velociraptor-docker
-Ironcailly this had nothing to do with docker initially
-
-
-
-Setup
-
-Ensure docker-compose is installed on the host
-
-git clone https://github.com/weslambert/velociraptor-docker
-
-cd velociraptor-docker
-
-Change credential values in .env as desired
-
-Commands
-
-** docker-com...
     </summary>
   
 

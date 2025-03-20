@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2025-03-19T21:47:46+00:00</updated>
+  <updated>2025-03-20T06:16:07+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/" rel="alternate" type="text/html" title="HAM Radio Notes" />
     <published>2025-03-17T12:55:00+00:00</published>
   
-    <updated>2025-03-17T12:55:00+00:00</updated>
+    <updated>2025-03-19T21:47:57+00:00</updated>
   
     <id>http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/</id>
     <content src="http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/" />

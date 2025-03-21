@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2025-03-20T06:16:07+00:00</updated>
+  <updated>2025-03-21T03:49:21+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:4000/</uri>
@@ -50,25 +50,18 @@
 
       Baofeng Menu Reference
 
-CHIRP
-
-Frequency
-Name
-Tone Mode
-Tone
-Tone Squelch
-DTCS
-RX DTCS
-DTCS Polarity
-Cross Mode
-Duplex
-Offset/TX Freq
-Mode
-Skip
-Power
 
 
+This is documentation for how to use a Baofeng Radio. I am using a UV-5R8W. Many far more technical and qualified people have done extensive tutorials, so you should check them out. But if you don’t have much of a radio background to begin with or just need a quick brush up, this should be the guide for you.
 
+You will need
+
+
+  
+    One Baofeng Radio
+  
+  
+    Connectin...
     </summary>
   
 

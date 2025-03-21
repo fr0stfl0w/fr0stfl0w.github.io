@@ -13,8 +13,8 @@
 
 
     
-    "snippet": "Baofeng Menu ReferenceCHIRPFrequencyNameTone ModeToneTone SquelchDTCSRX DTCSDTCS PolarityCross ModeDuplexOffset/TX FreqModeSkipPower",
-    "content": "Baofeng Menu ReferenceCHIRPFrequencyNameTone ModeToneTone SquelchDTCSRX DTCSDTCS PolarityCross ModeDuplexOffset/TX FreqModeSkipPower"
+    "snippet": "Baofeng Menu ReferenceThis is documentation for how to use a Baofeng Radio. I am using a UV-5R8W. Many far more technical and qualified people have done extensive tutorials, so you should check the...",
+    "content": "Baofeng Menu ReferenceThis is documentation for how to use a Baofeng Radio. I am using a UV-5R8W. Many far more technical and qualified people have done extensive tutorials, so you should check them out. But if you don’t have much of a radio background to begin with or just need a quick brush up, this should be the guide for you.You will need      One Baofeng Radio        Connecting Cables        CHIRP  CHIRPCHIRP is an open source python software for programming Baofengs and other radios with channels and other settings. The fields are as follows:FrequencyThis is the primary receive frequency that your radio is set to listen to.In a repeater setup, this would be the frequency the repeater transmits on (which is why you hear others talking on this frequency).NameCompletely self set, this could be anything you want but generally it should just be the name of the stationTone ModeToneTone SquelchDTCSRX DTCSDTCS PolarityCross ModeDuplexOffset/TX FreqModeSkipPower"
   },
   
   {

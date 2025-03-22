@@ -70,7 +70,7 @@
 <meta name="twitter:site" content="@technomancer_01" />
 <meta name="twitter:creator" content="@technomancer_01" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2025-03-19T21:47:57+00:00","datePublished":"2025-03-17T12:55:00+00:00","description":"Baofeng Menu Reference","headline":"HAM Radio Notes","image":"http://localhost:4000/assets/img/hzd-tallneck-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/"},"url":"http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Erika"},"dateModified":"2025-03-21T04:03:22+00:00","datePublished":"2025-03-17T12:55:00+00:00","description":"Baofeng Menu Reference","headline":"HAM Radio Notes","image":"http://localhost:4000/assets/img/hzd-tallneck-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/"},"url":"http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -705,6 +705,74 @@
     
 
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
 
   
 
@@ -936,6 +1004,65 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -992,13 +1119,13 @@
 
 <time
   
-  data-ts="1742420877"
+  data-ts="1742529802"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Mar 19, 2025
+  Mar 20, 2025
 </time>
 
       </span>
@@ -1053,9 +1180,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="172 words"
+  title="367 words"
 >
-  <em>1 min</em> read</span>
+  <em>2 min</em> read</span>
 
     </div>
     <!-- .d-flex -->
@@ -1088,16 +1215,57 @@
 <p>CHIRP is an open source python software for programming Baofengs and other radios with channels and other settings. The fields are as follows:</p>
 
 <h3 id="frequency"><span class="me-2">Frequency</span><a href="#frequency" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p><a href="/assets/img/tutorials/radio/CHIRP-HAM-Radio-settings.png" class="popup img-link "><img data-src="/assets/img/tutorials/radio/CHIRP-HAM-Radio-settings.png" alt="Desktop View" class="lazyload" data-proofer-ignore></a>
-This is the primary receive frequency that your radio is set to <em>listen</em> to.
-In a repeater setup, this would be the frequency the <em>repeater</em> transmits on (which is why you hear others talking on this frequency).</p>
+<p><a href="/assets/img/tutorials/radio/frequency.jpeg" class="popup img-link "><img data-src="/assets/img/tutorials/radio/frequency.jpeg" alt="Desktop View" class="lazyload" data-proofer-ignore></a></p>
+
+<p>This is the primary receive frequency that your radio is set to <em>listen</em> to.</p>
+
+<p>In a repeater setup, this would be the frequency the <em>repeater</em> transmits on (which is why you hear others talking on this frequency).</p>
 
 <h3 id="name"><span class="me-2">Name</span><a href="#name" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p>Completely self set, this could be anything you want but generally it should just be the name of the station</p>
+
 <h3 id="tone-mode"><span class="me-2">Tone Mode</span><a href="#tone-mode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<h3 id="tone"><span class="me-2">Tone</span><a href="#tone" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>How the radio handles squelch tones, such as CTCSS or DCS</p>
+
+<p>https://forums.radioreference.com/threads/tone-settings-in-chirp.331278/</p>
+
+<ul>
+  <li>“For general information though, the “Tone Mode” chosen determines which of the columns are going to be written to the radio.”
+<a href="/assets/img/tutorials/radio/ToneMode.png" class="popup img-link "><img data-src="/assets/img/tutorials/radio/ToneMode.png" alt="Desktop View" class="lazyload" data-proofer-ignore></a></li>
+</ul>
+
+<p>Notice you can pick [Blank], Tone, TSQL, DTCS, and Cross</p>
+
+<h4 id="blank"><span class="me-2">Blank</span><a href="#blank" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>No tone is being used, radio will transmit without sending a CTCSS or DCS tone. Your radio will receive all transmissions on that frequency even if they have a tone or squelch setting. If a repeater requires a tone to activate, your transmission will not trigger it unless you set the correct tone mode.</p>
+
+<p>When to Leave Tone Mode Blank?</p>
+<ul>
+  <li>If you’re using a simplex frequency (direct radio-to-radio communication).</li>
+  <li>If you’re listening to a frequency that doesn’t use a tone-based squelch.</li>
+  <li>If you’re scanning a frequency and want to hear everything, including signals without tones.</li>
+</ul>
+
+<p>When NOT to Leave It Blank?</p>
+<ul>
+  <li>If you’re using a repeater that requires a CTCSS/DCS tone.</li>
+  <li>If you’re getting no response from a repeater (it may require a tone).</li>
+  <li>If you want to filter out unwanted transmissions.</li>
+</ul>
+
+<h4 id="tone"><span class="me-2">Tone</span><a href="#tone" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Tone: radio sends a CTCSS tone when transmitting, but does not require a tone to receive</p>
+
+<h4 id="tsql"><span class="me-2">TSQL</span><a href="#tsql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<h4 id="dtcs"><span class="me-2">DTCS</span><a href="#dtcs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<h3 id="tone-1"><span class="me-2">Tone</span><a href="#tone-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <h3 id="tone-squelch"><span class="me-2">Tone Squelch</span><a href="#tone-squelch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<h3 id="dtcs"><span class="me-2">DTCS</span><a href="#dtcs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="dtcs-1"><span class="me-2">DTCS</span><a href="#dtcs-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <h3 id="rx-dtcs"><span class="me-2">RX DTCS</span><a href="#rx-dtcs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <h3 id="dtcs-polarity"><span class="me-2">DTCS Polarity</span><a href="#dtcs-polarity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <h3 id="cross-mode"><span class="me-2">Cross Mode</span><a href="#cross-mode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>

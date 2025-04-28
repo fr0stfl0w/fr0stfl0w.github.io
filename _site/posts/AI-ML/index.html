@@ -616,9 +616,67 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -715,9 +773,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="279 words"
+  title="672 words"
 >
-  <em>1 min</em> read</span>
+  <em>3 min</em> read</span>
 
     </div>
     <!-- .d-flex -->
@@ -729,6 +787,10 @@
   <h1 id="do-llms-dream-of-prompted-sheep">Do LLMs Dream of Prompted Sheep?</h1>
 
 <h2 id="a-basic-example"><span class="me-2">A Basic Example</span><a href="#a-basic-example" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>The Hello World version of this is to make a basic text summarizer</p>
+
+<p>We will be using Phi-2 as an example. Phi-2 is a small language model from Microsoft and hosted on HuggingFace</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -758,41 +820,9 @@
 24
 25
 26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
 </pre></td><td class="rouge-code"><pre>
-<span class="c1">##############################
-# Load model and tokenizer
-############################## 
-</span>
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForCausalLM</span>
 <span class="kn">import</span> <span class="nn">torch</span>
-
-<span class="c1"># transformers: open-source Python library made by HuggingFace. Lets you easily download, use, and train AI models such as Phi, Gemma 2B, GPT-2	
-</span>
-<span class="c1"># transformers.AutoTokenizer: convert human-readable text into tokens (numbers) that a machine can understand. Also converts the machine\’s output back into readable text.
-</span>
-<span class="c1"># transformers.AutoModelForCausalLM: Loads a causal language model. This iwll be the core of the system that generates tokens/words based on our input
-</span>
-<span class="c1">## "...two types of language modeling, causal and masked. Causal language models are frequently used for text generation. You can use these models for creative applications like choosing your own text adventure or an intelligent coding assistant like Copilot or CodeParrot."
-</span>  
-
-
-
 
 <span class="c1"># Load model and tokenizer
 </span><span class="n">model_id</span> <span class="o">=</span> <span class="s">"microsoft/phi-2"</span>
@@ -817,6 +847,98 @@ of French innovation and remains a popular tourist attraction today.
 <span class="k">print</span><span class="p">(</span><span class="n">summarize</span><span class="p">(</span><span class="n">input_text</span><span class="p">))</span>
 
 </pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="0-import-libraries"><span class="me-2">0. Import Libraries</span><a href="#0-import-libraries" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForCausalLM</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>transformers: open-source Python library made by HuggingFace. Lets you easily download, use, and train AI models such as Phi, Gemma 2B, GPT-2</li>
+  <li>transformers.AutoTokenizer: convert human-readable text into tokens (numbers) that a machine can understand. Also converts the machine’s output back into readable text.</li>
+  <li>transformers.AutoModelForCausalLM: Loads a causal language model. This will be the core of the system that generates tokens/words based on our input</li>
+</ul>
+
+<blockquote>
+  <p>“…two types of language modeling, <strong>causal</strong> and <strong>masked</strong>. Causal language models are frequently used for text generation, example being creative applications like choosing your own text adventure.”</p>
+</blockquote>
+
+<p>https://huggingface.co/docs/transformers/en//tasks/language_modeling</p>
+
+<ul>
+  <li>As opposed to masked:</li>
+</ul>
+
+<blockquote>
+  <p>“Masked language models (MLM) are a type of large language model (LLM) used to help predict missing words from text in natural language processing (NLP) tasks. Masked language modeling aids many tasks—from sentiment analysis to text generation—by training a model to understand the contextual relationship between words.”</p>
+</blockquote>
+
+<p>https://www.ibm.com/think/topics/masked-language-model</p>
+
+<h4 id="a-note-on-torch"><span class="me-2">A Note on Torch</span><a href="#a-note-on-torch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li><strong>torch</strong>:  PyTorch is an open-source machine learning framework. You’ll need this for running models locally in memory, as it is for deep learning frameworks for the infrastructure under the hood. What it actually does is handle the tensor operations that power models like Phi-2. Keep in mind that tensor operations are the <em>gasp</em> math underneath it all, aka matrices that eventually generate text</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre> <span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="c1"># Create two tensors
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Add them
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># tensor([5, 7, 9])
+</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>You may encounter cases where you need to run PyTorch on a GPU instead of just the CPU, especially for larger models or faster performance.</p>
+
+<h3 id="1-load-up-model"><span class="me-2">1. Load Up Model</span><a href="#1-load-up-model" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>This was content that ChatGPT output when I asked it for a basic text summarizer</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">model_id</span> <span class="o">=</span> <span class="s">"microsoft/phi-2"</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">to</span><span class="p">(</span><span class="s">"cpu"</span><span class="p">)</span>  <span class="c1"># MPS is optional if on Apple Silicon
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>
+    <p>model_id is pretty self explanatory, although you should note that you can pick and choose different models on Microsoft’s HuggingFace page. https://huggingface.co/microsoft</p>
+  </li>
+  <li>
+    <p>AutoTokenizer.from_pretrained(model_id): Initialize a tokenizer for the model, which converts input texts into tokens aka numbers that the model can process. AutoTokenizer is a way to automatically load the correct tokenizer for a given model.</p>
+  </li>
+  <li>
+    <p>AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float32): Loads the language model based on the model_id, off of Hugging Face’s model hub. Torch_dtype=torch.float32 specifies the data type of the model weights, which determines the precision used for calculations (32-bit floating point in this case). It allows you to load the model easily without manually configuring model architecture.</p>
+  </li>
+  <li>
+    <p>model.to(“cpu”) moves the model to the specified hardware. In this case, the device is “cpu”, meaning the model will run on the central processing unit of your machine. If you were using a machine with a GPU (or Apple	Silicon with MPS), you could move the model to those devices for faster processing.</p>
+  </li>
+</ul>
 
 </div>
 
@@ -976,6 +1098,13 @@ of French innovation and remains a popular tourist attraction today.
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/active-directory/">Active Directory</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/HAM-Radio-Baofeng-Notes/">HAM Radio Notes</a>
         </li>
       
@@ -998,13 +1127,6 @@ of French innovation and remains a popular tourist attraction today.
         
         <li class="text-truncate lh-lg">
           <a href="/posts/memprocfs-part-1/">MemProcFS (Part 1)</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Bloodborne/">Bloodborne in Wonderland</a>
         </li>
       
     </ul>

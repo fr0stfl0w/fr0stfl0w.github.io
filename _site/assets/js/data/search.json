@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Do LLMs Dream of Prompted Sheep?",
+    "url": "/posts/AI-ML/",
+    "categories": "Machine Learning, LLMs, AI",
+    "tags": "Machine Learning, LLMs, AI",
+    "date": "2025-04-21 12:55:00 +0000",
+    
+
+
+
+
+
+    
+    "snippet": "Do LLMs Dream of Prompted Sheep?A Basic Example############################### Load model and tokenizer############################## from transformers import AutoTokenizer, AutoModelForCausalLMimp...",
+    "content": "Do LLMs Dream of Prompted Sheep?A Basic Example############################### Load model and tokenizer############################## from transformers import AutoTokenizer, AutoModelForCausalLMimport torch# transformers: open-source Python library made by HuggingFace. Lets you easily download, use, and train AI models such as Phi, Gemma 2B, GPT-2\t# transformers.AutoTokenizer: convert human-readable text into tokens (numbers) that a machine can understand. Also converts the machine\\’s output back into readable text.# transformers.AutoModelForCausalLM: Loads a causal language model. This iwll be the core of the system that generates tokens/words based on our input## \"...two types of language modeling, causal and masked. Causal language models are frequently used for text generation. You can use these models for creative applications like choosing your own text adventure or an intelligent coding assistant like Copilot or CodeParrot.\"  # Load model and tokenizermodel_id = \"microsoft/phi-2\"tokenizer = AutoTokenizer.from_pretrained(model_id)model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float32)model = model.to(\"cpu\")  # MPS is optional if on Apple Silicon# Define summarizerdef summarize(text):    prompt = f\"Summarize this:\\n{text}\\n\\nSummary:\"    inputs = tokenizer(prompt, return_tensors=\"pt\").to(\"cpu\")    outputs = model.generate(**inputs, max_new_tokens=100)    return tokenizer.decode(outputs[0], skip_special_tokens=True)# Example Textinput_text = \"\"\"The Eiffel Tower is one of the most recognizable landmarks in the world. Built for the 1889 World's Fair in Paris,it stands at 324 meters tall and was originally meant to be dismantled after 20 years. However, it became a symbolof French innovation and remains a popular tourist attraction today.\"\"\"print(summarize(input_text))"
+  },
+  
+  {
     "title": "HAM Radio Notes",
     "url": "/posts/HAM-Radio-Baofeng-Notes/",
     "categories": "amateur radio, radio",
@@ -47,8 +64,8 @@
 
 
     
-    "snippet": "Forests, Trees, and Domains[Screenshot of AD]  Active Directory’s Logical Divisions  Domains: Group of network objects (ex.) with the same Active Directory database  Tree: a group of domains stemmi...",
-    "content": "Forests, Trees, and Domains[Screenshot of AD]  Active Directory’s Logical Divisions  Domains: Group of network objects (ex.) with the same Active Directory database  Tree: a group of domains stemming from those root domains.  Forest: A whole bunch of these root domainsSetup DNS on Active Directoryhttps://www.youtube.com/watch?v=-TsqAHUWdQU&amp;ab_channel=MSFTWebCast"
+    "snippet": "Namespace NotesThis is our layout[Network Layout]  192.168.5.1: Router  192.168.5.2: Bare Metal Host Machine (windows) This is the actual computer hosting all the virtual machines  192.168.5.3: Dom...",
+    "content": "Namespace NotesThis is our layout[Network Layout]  192.168.5.1: Router  192.168.5.2: Bare Metal Host Machine (windows) This is the actual computer hosting all the virtual machines  192.168.5.3: Domain Controller 1  192.168.5.4: Domain Controller 2  192.168.5.10: Appsec Box  192.168.5.20* - User workstationsWe’re going to be alternating between domain controllers to handle license expiration.Making an Active DirectoryScenario: Setup a Microsoft Active Directory Server on VirtualBox      Download the Windows Server Evaluation iso image(microsoft.com/en/-us/evalcenter/download-windows-server-2022)ISO Downloads &gt; 64 Bit Edition        Create a Virtual Machine using the ISO image downloadedNote: i had to have it empty and add the iso later on to avoid the licensing requirement        Configure this Windows AD server to our needs &amp; make it into a DC (Domain Controller)        16:20 - Server Manager Dashboard          Select Step 2: Add Roles &amp; Features      Server Manager &gt; Dashboard    At this point I also changed the name of the pc (settings)   Also checking network settings to be static   In the virtualbox settings, it needs to be set to a bridged adapter            Role-based or feature-based installation        Now, when you get to Server Roles, it will have File and Storage Services  [interject to show the server manager and dashboard screenshot]  16:42 - Active Directory Domain Services  Installation succeeded, time to promote it to a domain controller  Forest: Collection of domains  Root Domain Name: scavengers-repo.local  Set password  Custom Install (Windows Server 2022 Desktop Standard)  Login after the restart  Part 2: Setting up the network by creating a userForests, Trees, and Domains[Screenshot of AD]  Active Directory’s Logical Divisions  Domains: Group of network objects (ex.) with the same Active Directory database  Tree: a group of domains stemming from those root domains.  Forest: A whole bunch of these root domainsSetup DNS on Active Directoryhttps://www.youtube.com/watch?v=-TsqAHUWdQU&amp;ab_channel=MSFTWebCast"
   },
   
   {

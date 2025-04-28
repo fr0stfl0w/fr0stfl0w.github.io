@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Scavengers' Repo</title>
   <subtitle>A collection of documentation for various tutorials and resources I've picked up along the way. Whether you're a fellow cybersec person or bewildered normie, this digital space can be a bit easier to navigate. Hopefully, maybe they'll help you too.</subtitle>
-  <updated>2025-03-22T22:56:09+00:00</updated>
+  <updated>2025-04-28T15:35:01+00:00</updated>
   <author>
     <name>Erika</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,63 @@
 
   
   <entry>
+    <title>Do LLMs Dream of Prompted Sheep?</title>
+    <link href="http://localhost:4000/posts/AI-ML/" rel="alternate" type="text/html" title="Do LLMs Dream of Prompted Sheep?" />
+    <published>2025-04-21T12:55:00+00:00</published>
+  
+    <updated>2025-04-21T12:55:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/AI-ML/</id>
+    <content src="http://localhost:4000/posts/AI-ML/" />
+    <author>
+      <name>erika</name>
+    </author>
+
+  
+    
+    <category term="Machine Learning" />
+    
+    <category term="LLMs" />
+    
+    <category term="AI" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Do LLMs Dream of Prompted Sheep?
+
+A Basic Example
+
+
+##############################
+# Load model and tokenizer
+############################## 
+
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+
+# transformers: open-source Python library made by HuggingFace. Lets you easily download, use, and train AI models such as Phi, Gemma 2B, GPT-2	
+
+# transformers.AutoTokenizer: con...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>HAM Radio Notes</title>
     <link href="http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/" rel="alternate" type="text/html" title="HAM Radio Notes" />
     <published>2025-03-17T12:55:00+00:00</published>
   
-    <updated>2025-03-21T04:03:22+00:00</updated>
+    <updated>2025-03-22T22:57:32+00:00</updated>
   
     <id>http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/</id>
     <content src="http://localhost:4000/posts/HAM-Radio-Baofeng-Notes/" />
@@ -153,20 +205,22 @@ Hypertext...
 
 
 
-      Forests, Trees, and Domains
+      Namespace Notes
 
-[Screenshot of AD]
+This is our layout
 
-
-  Active Directory’s Logical Divisions
-  Domains: Group of network objects (ex.) with the same Active Directory database
-  Tree: a group of domains stemming from those root domains.
-  Forest: A whole bunch of these root domains
+[Network Layout]
 
 
-Setup DNS on Active Directory
-https://www.youtube.com/watch?v=-TsqAHUWdQU&amp;amp;ab_channel=MSFTWebCast
+  192.168.5.1: Router
+  192.168.5.2: Bare Metal Host Machine (windows) This is the actual computer hosting all the virtual machines
+  192.168.5.3: Domain Controller 1
+  192.168.5.4: Domain Controller 2
+  192.168.5.10: Appsec Box
+  192.168.5.20* - User workstations
 
+
+We’re going to be alternating between domain controllers to handle license...
     </summary>
   
 
@@ -221,80 +275,6 @@ https://www.youtube.com/watch?v=-TsqAHUWdQU&amp;amp;ab_channel=MSFTWebCast
   
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Base CTF Recipe</title>
-    <link href="http://localhost:4000/posts/ctfs/" rel="alternate" type="text/html" title="Base CTF Recipe" />
-    <published>2024-02-14T12:55:00+00:00</published>
-  
-    <updated>2024-02-14T12:55:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/ctfs/</id>
-    <content src="http://localhost:4000/posts/ctfs/" />
-    <author>
-      <name>erika</name>
-    </author>
-
-  
-    
-    <category term="tech" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      duffle bag for pen test
-
-Raw Notes
-
-
-Raw Notes 1
-
-Recon
-
-nmap scan reveals two open ports
-
-
-  
-    
-      Port
-      Status
-      Info
-    
-  
-  
-    
-      80
-      open
-      http (web application)
-    
-    
-      1080
-      open
-      socks (socks5 proxy requiring authentication)
-    
-  
-
-
-
-  nikto -h [ip address]
-
-
-reveals more about the web application such as the version
-
-
-  dirbuster [we...
     </summary>
   
 

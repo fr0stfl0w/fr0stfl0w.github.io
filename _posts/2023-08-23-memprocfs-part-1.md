@@ -44,13 +44,6 @@ Annotations and quick copy-pastes for MemprocFS, based on 13Cubed's tutorial. I 
 ```
 
 
-![Desktop View](/assets/img/tutorials/memprocfs-part1/raw notes 1.jpeg){: width="500" height="589" }
-_Raw Notes 1_
-![Desktop View](/assets/img/tutorials/memprocfs-part1/raw notes 2.jpeg){: width="572" height="589" }
-_Raw Notes 2_
-![Desktop View](/assets/img/tutorials/memprocfs-part1/raw notes 3.jpeg){: width="572" height="589" }
-_Raw Notes 3_
-
 ## Part 0: AKA Installation
 
 This was the trickiest part IMO especially if you are some casual like me who has NO IDEA what forensics tools are like.

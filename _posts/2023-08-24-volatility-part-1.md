@@ -18,14 +18,6 @@ Annotations of various tutorials on starting out in Volatility, a python-based t
 
 ## Raw Notes
 
-![Desktop View](/assets/img/tutorials/volatility-part1/volpart1.jpeg){: width="500" height="589" }
-_Raw Notes 1_
-![Desktop View](/assets/img/tutorials/volatility-part1/volpart2.jpeg){: width="572" height="589" }
-_Raw Notes 2_
-![Desktop View](/assets/img/tutorials/volatility-part1/volpart3.jpeg){: width="572" height="589" }
-_Raw Notes 3_
-![Desktop View](/assets/img/tutorials/volatility-part1/volpart4.jpeg){: width="500" height="589" }
-_Raw Notes 4_
 
 
 ## Tutorials Used
